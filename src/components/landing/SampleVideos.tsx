@@ -1,39 +1,64 @@
 import { Play, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useRef } from "react";
 
 const SampleVideos = () => {
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
   const samples = [
     {
       title: "E-commerce Product Ad",
       category: "Online Store",
       gradient: "from-orange-500/20 to-red-500/20",
+      video: null,
     },
     {
       title: "Restaurant Promo",
       category: "Local Business",
       gradient: "from-green-500/20 to-emerald-500/20",
+      video: null,
     },
     {
       title: "Coaching Institute",
       category: "Education",
       gradient: "from-blue-500/20 to-cyan-500/20",
+      video: null,
     },
     {
       title: "Real Estate Showcase",
       category: "Property",
       gradient: "from-purple-500/20 to-pink-500/20",
+      video: "/videos/realestate.mp4",
     },
     {
       title: "Fashion Brand Launch",
       category: "D2C Brand",
       gradient: "from-pink-500/20 to-rose-500/20",
+      video: null,
     },
     {
       title: "Tech Startup Demo",
       category: "SaaS / App",
       gradient: "from-cyan-500/20 to-blue-500/20",
+      video: null,
     },
   ];
+
+  const handlePlayClick = (index: number) => {
+    if (samples[index].video) {
+      if (playingVideo === index) {
+        videoRefs.current[index]?.pause();
+        setPlayingVideo(null);
+      } else {
+        if (playingVideo !== null && videoRefs.current[playingVideo]) {
+          videoRefs.current[playingVideo]?.pause();
+        }
+        setPlayingVideo(index);
+        videoRefs.current[index]?.play();
+      }
+    }
+  };
 
   const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20saw%20the%20sample%20videos%20and%20want%20an%20ad%20like%20that!";
 
@@ -57,16 +82,33 @@ const SampleVideos = () => {
             <div
               key={index}
               className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer border border-border/50 hover:border-primary/50 transition-all duration-300"
+              onClick={() => handlePlayClick(index)}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${sample.gradient}`} />
-              <div className="absolute inset-0 bg-card/50 backdrop-blur-sm" />
+              {sample.video ? (
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)}
+                  src={sample.video}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loop
+                  muted
+                  playsInline
+                  onEnded={() => setPlayingVideo(null)}
+                />
+              ) : (
+                <>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${sample.gradient}`} />
+                  <div className="absolute inset-0 bg-card/50 backdrop-blur-sm" />
+                </>
+              )}
               
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-primary/50">
-                  <Play className="w-6 h-6 text-primary fill-primary" />
+              {/* Play Button - hide when video is playing */}
+              {(playingVideo !== index || !sample.video) && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-primary/50">
+                    <Play className="w-6 h-6 text-primary fill-primary" />
+                  </div>
                 </div>
-              </div>
+              )}
               
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">

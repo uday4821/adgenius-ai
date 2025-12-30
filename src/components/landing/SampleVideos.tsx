@@ -14,10 +14,10 @@ const SampleVideos = () => {
       video: null,
     },
     {
-      title: "Restaurant Promo",
-      category: "Local Business",
+      title: "Hot Coffee That Sells Itself",
+      category: "Café & Restaurant Ads",
       gradient: "from-green-500/20 to-emerald-500/20",
-      video: null,
+      video: "/videos/restaurant.mp4",
     },
     {
       title: "Coaching Institute",

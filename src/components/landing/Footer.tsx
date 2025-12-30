@@ -1,8 +1,10 @@
-import { MessageCircle, Mail, Globe } from "lucide-react";
+import { MessageCircle, Mail, Globe, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   const whatsappLink = "https://wa.me/918919400755";
   const emailLink = "mailto:contact@edgeaihub.in";
+  const instagramLink = "https://www.instagram.com/edge_aihub?igsh=MW4zZzBtZWFpbnI0MQ==";
+  const facebookLink = "https://www.facebook.com/edgeaihub/";
 
   return (
     <footer className="py-12 bg-card/50 border-t border-border/50 relative">
@@ -42,8 +44,28 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
-          <div className="text-right">
+          {/* Social & Links */}
+          <div className="text-right space-y-3">
+            <div className="flex items-center justify-end gap-4">
+              <a 
+                href={instagramLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href={facebookLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
             <a 
               href="https://www.edgeaihub.in" 
               target="_blank" 

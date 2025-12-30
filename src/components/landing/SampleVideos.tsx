@@ -8,10 +8,10 @@ const SampleVideos = () => {
 
   const samples = [
     {
-      title: "E-commerce Product Ad",
-      category: "Online Store",
+      title: "Jewellery & Fashion That Sells 10x Faster",
+      category: "E-commerce & D2C Ads",
       gradient: "from-orange-500/20 to-red-500/20",
-      video: null,
+      video: "/videos/ecommerce.mp4",
     },
     {
       title: "Hot Coffee That Sells Itself",

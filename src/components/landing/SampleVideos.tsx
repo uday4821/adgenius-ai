@@ -41,7 +41,7 @@ const SampleVideos = () => {
       title: "Tech Startup Demo",
       category: "SaaS / App",
       gradient: "from-cyan-500/20 to-blue-500/20",
-      video: null,
+      video: "/videos/cgiads.mp4",
     },
   ];
 

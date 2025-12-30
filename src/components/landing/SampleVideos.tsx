@@ -32,10 +32,10 @@ const SampleVideos = () => {
       video: "/videos/realestate.mp4",
     },
     {
-      title: "Fashion Brand Launch",
-      category: "D2C Brand",
+      title: "Runway-Ready Ads That Convert",
+      category: "Fashion & D2C Brands",
       gradient: "from-pink-500/20 to-rose-500/20",
-      video: null,
+      video: "/videos/fashion.mp4",
     },
     {
       title: "Tech Startup Demo",

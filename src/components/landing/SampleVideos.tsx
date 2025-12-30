@@ -20,10 +20,10 @@ const SampleVideos = () => {
       video: "/videos/restaurant.mp4",
     },
     {
-      title: "Coaching Institute",
-      category: "Education",
+      title: "Coaching Ads That Fill Every Seat",
+      category: "Education & EdTech",
       gradient: "from-blue-500/20 to-cyan-500/20",
-      video: null,
+      video: "/videos/education.mp4",
     },
     {
       title: "Real Estate Showcase",

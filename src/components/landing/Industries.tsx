@@ -9,7 +9,7 @@ import {
   Sparkles,
   Film
 } from "lucide-react";
-import modelEcommerce from "@/assets/model-ecommerce.jpg";
+import modelBeauty from "@/assets/model-beauty-premium.jpg";
 
 const Industries = () => {
   const industries = [
@@ -40,20 +40,34 @@ const Industries = () => {
         </div>
 
         {/* Featured Industry Image */}
-        <div className="mb-16 max-w-4xl mx-auto">
+        <div className="mb-16 grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden border border-border/50 glow-purple">
             <img 
-              src={modelEcommerce}
-              alt="E-commerce Jewelry Fashion Advertising - Premium AI Video Ads"
-              className="w-full aspect-[21/9] object-cover object-center"
+              src={modelBeauty}
+              alt="Beauty Cosmetics Skincare Advertising - Premium AI Video Ads for Beauty Brands India"
+              className="w-full aspect-square object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="font-display text-2xl md:text-4xl font-bold mb-2">Premium Brand Advertising</h3>
-                <p className="text-muted-foreground">Jewelry • Fashion • Luxury • E-commerce</p>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h3 className="font-display text-xl font-bold mb-1">Beauty & Cosmetics</h3>
+              <p className="text-sm text-muted-foreground">Skincare • Makeup • Wellness • Luxury</p>
+            </div>
+          </div>
+          
+          <div className="text-center lg:text-left">
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              Premium Brand <span className="text-gradient">Advertising</span>
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Our AI creates stunning video advertisements that capture the essence of luxury, beauty, and sophistication. 
+              Perfect for jewelry, fashion, cosmetics, and premium e-commerce brands looking to dominate global markets.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">Jewelry</span>
+              <span className="px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">Fashion</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">Beauty</span>
+              <span className="px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium">Luxury</span>
             </div>
           </div>
         </div>

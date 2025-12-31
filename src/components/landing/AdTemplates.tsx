@@ -1,5 +1,5 @@
 import { TrendingUp, Target, Layers, Palette } from "lucide-react";
-import modelBeauty from "@/assets/model-beauty-1.jpg";
+import modelJewelry from "@/assets/model-jewelry-luxury.jpg";
 
 const AdTemplates = () => {
   const features = [
@@ -66,8 +66,8 @@ const AdTemplates = () => {
             {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden border border-border/50 glow-cyan">
               <img 
-                src={modelBeauty}
-                alt="Premium AI Video Advertising Templates - High Converting Ad Designs"
+                src={modelJewelry}
+                alt="Premium AI Video Advertising Templates - Luxury Jewelry Fashion E-commerce Ads India"
                 className="w-full aspect-square object-cover"
                 loading="lazy"
               />
@@ -77,7 +77,7 @@ const AdTemplates = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="text-center">
                   <h3 className="font-display text-2xl font-bold mb-2">500+ Premium Templates</h3>
-                  <p className="text-muted-foreground">Across 50+ industries worldwide</p>
+                  <p className="text-muted-foreground">Jewelry • Fashion • Luxury • E-commerce</p>
                 </div>
               </div>
             </div>

@@ -1,30 +1,40 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Film, Clapperboard, Star, Globe, Award } from "lucide-react";
-import shortfilmHero from "@/assets/ai-shortfilm-hero.jpg";
+import { MessageCircle, Film, Clapperboard, Star, Globe, Award, Play } from "lucide-react";
+import shortfilmCinematic from "@/assets/shortfilm-cinematic.jpg";
+import { useState, useRef } from "react";
 
 const AIShortFilms = () => {
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I'm%20interested%20in%20AI%20Short%20Films%20production";
+  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I'm%20interested%20in%20AI%20Short%20Films%20production%20for%20international%20markets";
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   const features = [
     {
       icon: Clapperboard,
       title: "Hollywood-Level Production",
-      description: "Cinematic AI-generated visuals that rival million-dollar productions",
+      description: "Cinematic AI visuals rivaling million-dollar productions",
     },
     {
       icon: Globe,
       title: "Global Distribution Ready",
-      description: "Perfect for YouTube, OTT platforms, and international film festivals",
+      description: "Perfect for YouTube, Netflix, OTT & film festivals",
     },
     {
       icon: Award,
       title: "Award-Winning Quality",
-      description: "AI storytelling that captivates audiences worldwide",
+      description: "AI storytelling captivating audiences worldwide",
     },
     {
       icon: Star,
       title: "Brand Integration",
-      description: "Seamlessly embed your brand story in compelling narratives",
+      description: "Seamlessly embed your brand in compelling narratives",
     },
   ];
 
@@ -43,7 +53,7 @@ const AIShortFilms = () => {
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
               <Film className="w-4 h-4 text-secondary" />
-              <span className="text-sm font-medium">NEW: AI Short Films</span>
+              <span className="text-sm font-medium">NEW: AI Short Films Production</span>
             </div>
             
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 leading-tight">
@@ -54,7 +64,7 @@ const AIShortFilms = () => {
             
             <p className="text-xl text-muted-foreground mb-8">
               Take your brand global with <strong className="text-foreground">cinematic AI-generated short films</strong>. 
-              Perfect for YouTube channels, brand documentaries, product stories, and international advertising campaigns.
+              Perfect for YouTube channels, Netflix-style content, brand documentaries, product stories, and international advertising campaigns.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -82,26 +92,50 @@ const AIShortFilms = () => {
             </a>
           </div>
 
-          {/* Image Side */}
+          {/* Video/Image Side */}
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-2xl overflow-hidden border border-border/50 glow-purple">
-              <img 
-                src={shortfilmHero}
-                alt="AI Short Film Production - Cinematic Quality by edgeaihub"
-                className="w-full aspect-video object-cover"
-                loading="lazy"
+              {!isPlaying ? (
+                <>
+                  <img 
+                    src={shortfilmCinematic}
+                    alt="AI Short Film Production - Professional Cinematic Quality by edgeaihub for Global Brands"
+                    className="w-full aspect-video object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  
+                  {/* Play Button Overlay */}
+                  <button 
+                    onClick={handlePlayVideo}
+                    className="absolute inset-0 flex items-center justify-center group cursor-pointer"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                      <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+                    </div>
+                  </button>
+                </>
+              ) : null}
+              
+              <video 
+                ref={videoRef}
+                src="/videos/ai-shortfilm.mp4"
+                className={`w-full aspect-video object-cover ${isPlaying ? 'block' : 'hidden'}`}
+                controls
+                playsInline
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               
               {/* Overlay Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <Film className="w-5 h-5 text-secondary" />
-                  <span className="text-sm font-semibold text-secondary">AI-Generated</span>
+              {!isPlaying && (
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Film className="w-5 h-5 text-secondary" />
+                    <span className="text-sm font-semibold text-secondary">AI-Generated Cinema</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold mb-1">Premium Short Films</h3>
+                  <p className="text-sm text-muted-foreground">Cinematic storytelling for global brands</p>
                 </div>
-                <h3 className="font-display text-xl font-bold mb-1">Premium Short Films</h3>
-                <p className="text-sm text-muted-foreground">Cinematic storytelling for global brands</p>
-              </div>
+              )}
             </div>
 
             {/* Floating Badges */}

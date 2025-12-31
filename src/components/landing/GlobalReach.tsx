@@ -1,5 +1,6 @@
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
-import modelFashion from "@/assets/model-fashion-1.jpg";
+import modelFashion from "@/assets/model-fashion-editorial.jpg";
+import globalBusiness from "@/assets/global-business-team.jpg";
 
 const GlobalReach = () => {
   const stats = [
@@ -31,38 +32,50 @@ const GlobalReach = () => {
           </p>
         </div>
 
-        {/* Featured Image + Stats Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Image Side */}
+        {/* Featured Images Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Fashion Image */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden border border-border/50 glow-cyan">
               <img 
                 src={modelFashion}
-                alt="Global Fashion Advertising - Premium AI Video Ads for International Brands"
-                className="w-full aspect-[16/10] object-cover object-top"
+                alt="Global Fashion Advertising - Premium AI Video Ads for International Luxury Brands India"
+                className="w-full aspect-[4/5] object-cover object-top"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 glass px-6 py-3 rounded-full text-sm font-medium">
-              <span className="text-primary">✨</span> Trusted by Global Brands
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="font-display text-xl font-bold mb-1">Fashion & Luxury</h3>
+                <p className="text-sm text-muted-foreground">Premium brand advertising worldwide</p>
+              </div>
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl glass text-center hover:border-primary/50 transition-all duration-300"
-              >
-                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+          {/* Business Image + Stats */}
+          <div className="space-y-6">
+            <div className="rounded-2xl overflow-hidden border border-border/50 glow-purple">
+              <img 
+                src={globalBusiness}
+                alt="Global Business Advertising - Corporate AI Video Production for Fortune 500 Companies"
+                className="w-full aspect-video object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            </div>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="p-5 rounded-2xl glass text-center hover:border-primary/50 transition-all duration-300"
+                >
+                  <stat.icon className="w-7 h-7 text-primary mx-auto mb-2" />
+                  <div className="text-2xl md:text-3xl font-display font-bold text-gradient mb-1">{stat.value}</div>
+                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

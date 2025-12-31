@@ -1,4 +1,5 @@
 import { TrendingUp, Target, Layers, Palette } from "lucide-react";
+import modelBeauty from "@/assets/model-beauty-1.jpg";
 
 const AdTemplates = () => {
   const features = [
@@ -34,7 +35,7 @@ const AdTemplates = () => {
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Our Secret Weapon</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
@@ -62,22 +63,21 @@ const AdTemplates = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-video rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-border/50 overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center animate-pulse-glow">
-                    <Layers className="w-10 h-10 text-primary" />
-                  </div>
+            {/* Main Image */}
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 glow-cyan">
+              <img 
+                src={modelBeauty}
+                alt="Premium AI Video Advertising Templates - High Converting Ad Designs"
+                className="w-full aspect-square object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              
+              {/* Overlay Stats */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="text-center">
                   <h3 className="font-display text-2xl font-bold mb-2">500+ Premium Templates</h3>
-                  <p className="text-muted-foreground">Across 50+ industries</p>
-                </div>
-              </div>
-              {/* Decorative grid */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="grid grid-cols-8 grid-rows-6 h-full">
-                  {Array.from({ length: 48 }).map((_, i) => (
-                    <div key={i} className="border border-primary/20" />
-                  ))}
+                  <p className="text-muted-foreground">Across 50+ industries worldwide</p>
                 </div>
               </div>
             </div>

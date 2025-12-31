@@ -1,4 +1,5 @@
 import { Globe, TrendingUp, Users, Zap } from "lucide-react";
+import modelFashion from "@/assets/model-fashion-1.jpg";
 
 const GlobalReach = () => {
   const stats = [
@@ -30,18 +31,39 @@ const GlobalReach = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-2xl glass text-center hover:border-primary/50 transition-all duration-300"
-            >
-              <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+        {/* Featured Image + Stats Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Image Side */}
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden border border-border/50 glow-cyan">
+              <img 
+                src={modelFashion}
+                alt="Global Fashion Advertising - Premium AI Video Ads for International Brands"
+                className="w-full aspect-[16/10] object-cover object-top"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             </div>
-          ))}
+            
+            {/* Floating Badge */}
+            <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 glass px-6 py-3 rounded-full text-sm font-medium">
+              <span className="text-primary">✨</span> Trusted by Global Brands
+            </div>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl glass text-center hover:border-primary/50 transition-all duration-300"
+              >
+                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl md:text-4xl font-display font-bold text-gradient mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Countries */}

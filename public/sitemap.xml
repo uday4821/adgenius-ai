@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://ai.edgeaihub.in/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ai.edgeaihub.in/og-image.jpg</image:loc>
+      <image:title>edgeaihub - Premium AI Video Ads</image:title>
+      <image:caption>Get studio-quality AI video ads for just ₹199</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -40,6 +40,11 @@ const Index = () => {
         <meta name="geo.placename" content="India" />
         <meta name="language" content="English" />
         <meta httpEquiv="content-language" content="en-US, en-IN, hi-IN" />
+        <meta name="theme-color" content="#0a0a0f" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

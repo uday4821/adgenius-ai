@@ -1,22 +1,7 @@
-/* Optimized font loading with display=swap for performance */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-
+/* Fonts loaded via preload in index.html for non-render-blocking */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Critical CSS - Above the fold styles */
-@layer base {
-  /* Reduce CLS by setting explicit font-display */
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Space Grotesk';
-    font-display: swap;
-  }
-}
 
 @layer base {
   :root {

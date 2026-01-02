@@ -105,7 +105,7 @@ const Industries = () => {
         </header>
 
         {/* Featured Model Images Grid - Premium Fashion & Beauty */}
-        <div className="mb-16 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="mb-16 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" role="list" aria-label="Featured premium model images">
           <figure className="relative rounded-2xl overflow-hidden border border-border/50 glow-purple group">
             <img 
               src={modelLuxuryFashion}
@@ -113,8 +113,9 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="768"
-              height="1024"
+              width="400"
+              height="533"
+              fetchPriority="low"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -130,8 +131,9 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="768"
-              height="1024"
+              width="400"
+              height="533"
+              fetchPriority="low"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -147,8 +149,9 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="768"
-              height="1024"
+              width="400"
+              height="533"
+              fetchPriority="low"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -174,7 +177,8 @@ const Industries = () => {
                   loading="lazy"
                   decoding="async"
                   width="400"
-                  height="300"
+                  height="192"
+                  fetchPriority="low"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                 <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30" aria-hidden="true">

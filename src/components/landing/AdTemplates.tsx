@@ -70,6 +70,10 @@ const AdTemplates = () => {
                 alt="Premium AI Video Advertising Templates - Luxury Jewelry Fashion E-commerce Ads India"
                 className="w-full aspect-square object-cover"
                 loading="lazy"
+                decoding="async"
+                width="582"
+                height="582"
+                fetchPriority="low"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               
@@ -83,10 +87,10 @@ const AdTemplates = () => {
             </div>
             
             {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-full text-sm font-medium animate-float">
+            <div className="absolute -top-4 -right-4 glass px-4 py-2 rounded-full text-sm font-medium animate-float" aria-hidden="true">
               <span className="text-primary">★</span> 4.9/5 Rating
             </div>
-            <div className="absolute -bottom-4 -left-4 glass px-4 py-2 rounded-full text-sm font-medium animate-float" style={{ animationDelay: '-2s' }}>
+            <div className="absolute -bottom-4 -left-4 glass px-4 py-2 rounded-full text-sm font-medium animate-float" style={{ animationDelay: '-2s' }} aria-hidden="true">
               <span className="text-secondary">⚡</span> AI-Powered
             </div>
           </div>

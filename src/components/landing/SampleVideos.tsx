@@ -63,26 +63,30 @@ const SampleVideos = () => {
   const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20saw%20the%20sample%20videos%20and%20want%20an%20ad%20like%20that!";
 
   return (
-    <section id="samples" className="py-20 md:py-32 relative">
-      <div className="absolute inset-0 neural-bg opacity-30" />
+    <section id="samples" className="py-20 md:py-32 relative" aria-labelledby="samples-heading">
+      <div className="absolute inset-0 neural-bg opacity-30" aria-hidden="true" />
       
       <div className="container relative z-10">
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Real Examples</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
+          <h2 id="samples-heading" className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
             See Real <span className="text-gradient">AI Ads We Create</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             These are actual sample videos. This is the <strong className="text-foreground">exact quality</strong> you will receive.
           </p>
-        </div>
+        </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" role="list" aria-label="Sample video advertisements">
           {samples.map((sample, index) => (
-            <div
+            <article
               key={index}
+              role="listitem"
               className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer border border-border/50 hover:border-primary/50 transition-all duration-300"
               onClick={() => handlePlayClick(index)}
+              onKeyDown={(e) => e.key === 'Enter' && handlePlayClick(index)}
+              tabIndex={0}
+              aria-label={`Play ${sample.title} video`}
             >
               {sample.video ? (
                 <video
@@ -92,7 +96,10 @@ const SampleVideos = () => {
                   loop
                   muted
                   playsInline
+                  preload="none"
+                  poster=""
                   onEnded={() => setPlayingVideo(null)}
+                  aria-label={`${sample.title} video advertisement`}
                 />
               ) : (
                 <>
@@ -103,7 +110,7 @@ const SampleVideos = () => {
               
               {/* Play Button - hide when video is playing */}
               {(playingVideo !== index || !sample.video) && (
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                   <div className="w-16 h-16 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-primary/50">
                     <Play className="w-6 h-6 text-primary fill-primary" />
                   </div>
@@ -117,22 +124,22 @@ const SampleVideos = () => {
               </div>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+            </article>
           ))}
         </div>
 
-        <div className="text-center">
+        <footer className="text-center">
           <p className="text-lg text-muted-foreground mb-6">
             Want an ad like this for your business?
           </p>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp about sample videos">
             <Button variant="hero" size="xl">
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Chat with Us on WhatsApp
             </Button>
           </a>
-        </div>
+        </footer>
       </div>
     </section>
   );

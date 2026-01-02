@@ -96,8 +96,7 @@ const SampleVideos = () => {
                   loop
                   muted
                   playsInline
-                  preload="none"
-                  poster=""
+                  preload="metadata"
                   onEnded={() => setPlayingVideo(null)}
                   aria-label={`${sample.title} video advertisement`}
                 />

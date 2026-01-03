@@ -8,26 +8,29 @@ const HeroSection = () => {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden contain-layout"
       aria-labelledby="hero-heading"
       role="region"
     >
-      {/* Background Image with Overlay - Optimized loading */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-        role="img"
-        aria-label="Professional AI video production studio background"
-      >
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-      </div>
+      {/* Background Image with Overlay - High priority LCP element */}
+      <img 
+        src={heroBg}
+        alt="Professional AI video production studio background"
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        decoding="sync"
+        loading="eager"
+        width="1920"
+        height="1080"
+      />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
 
-      {/* Neural Background Effects */}
-      <div className="absolute inset-0 neural-bg" aria-hidden="true" />
+      {/* Neural Background Effects - will-change for GPU acceleration */}
+      <div className="absolute inset-0 neural-bg will-change-transform" aria-hidden="true" />
       
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" aria-hidden="true" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} aria-hidden="true" />
+      {/* Animated Gradient Orbs - GPU accelerated with contain */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float will-change-transform contain-strict" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-float will-change-transform contain-strict" style={{ animationDelay: '-3s' }} aria-hidden="true" />
 
       <div className="container relative z-10 px-4 py-20 md:py-32">
         <div className="max-w-5xl mx-auto text-center">

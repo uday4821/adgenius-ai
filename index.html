@@ -49,6 +49,9 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://wa.me" />
     
+    <!-- Preload critical hero image for LCP optimization -->
+    <link rel="preload" as="image" href="/src/assets/hero-bg.jpg" fetchpriority="high" />
+    
     <!-- Preload fonts for faster LCP - non-render-blocking -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>

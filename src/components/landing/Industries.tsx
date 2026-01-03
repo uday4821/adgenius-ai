@@ -113,9 +113,10 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="400"
-              height="533"
+              width="634"
+              height="845"
               fetchPriority="low"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -131,9 +132,10 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="400"
-              height="533"
+              width="634"
+              height="845"
               fetchPriority="low"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -149,9 +151,10 @@ const Industries = () => {
               className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
-              width="400"
-              height="533"
+              width="634"
+              height="845"
               fetchPriority="low"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -179,6 +182,7 @@ const Industries = () => {
                   width="400"
                   height="192"
                   fetchPriority="low"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                 <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/30" aria-hidden="true">

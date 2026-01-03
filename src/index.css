@@ -146,6 +146,19 @@
   .glass-strong {
     @apply backdrop-blur-2xl bg-card/70 border border-border/60;
   }
+
+  /* Performance optimizations */
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-strict {
+    contain: strict;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
 }
 
 @keyframes float {

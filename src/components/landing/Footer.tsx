@@ -1,6 +1,7 @@
+import { forwardRef, memo } from "react";
 import { MessageCircle, Mail, Globe, Instagram, Facebook, Film, Sparkles } from "lucide-react";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   const whatsappLink = "https://wa.me/918919400755";
   const emailLink = "mailto:contact@edgeaihub.in";
   const instagramLink = "https://www.instagram.com/edge_aihub?igsh=MW4zZzBtZWFpbnI0MQ==";
@@ -23,7 +24,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 bg-card/50 border-t border-border/50 relative" role="contentinfo" aria-label="Site footer">
+    <footer ref={ref} className="py-16 bg-card/50 border-t border-border/50 relative" role="contentinfo" aria-label="Site footer">
       <div className="container">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
@@ -149,6 +150,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
 
-export default Footer;
+Footer.displayName = "Footer";
+
+export default memo(Footer);

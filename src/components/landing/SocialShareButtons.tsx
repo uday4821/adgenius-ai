@@ -1,3 +1,4 @@
+import { memo, useCallback } from "react";
 import { Share2, MessageCircle } from "lucide-react";
 
 const SocialShareButtons = () => {
@@ -47,7 +48,7 @@ const SocialShareButtons = () => {
       </a>
       
       <button
-        onClick={() => {
+        onClick={useCallback(() => {
           if (navigator.share) {
             navigator.share({
               title: "edgeaihub - Premium AI Video Ads",
@@ -55,7 +56,7 @@ const SocialShareButtons = () => {
               url: shareUrl,
             });
           }
-        }}
+        }, [])}
         className="w-12 h-12 bg-primary hover:bg-primary/80 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300"
         aria-label="Share"
       >
@@ -65,4 +66,4 @@ const SocialShareButtons = () => {
   );
 };
 
-export default SocialShareButtons;
+export default memo(SocialShareButtons);

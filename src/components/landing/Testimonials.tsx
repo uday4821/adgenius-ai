@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
@@ -133,4 +134,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default memo(Testimonials);

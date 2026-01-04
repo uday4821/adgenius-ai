@@ -1,22 +1,32 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
-import WhyEdgeAIHub from "@/components/landing/WhyEdgeAIHub";
-import AdTemplates from "@/components/landing/AdTemplates";
-import ROISection from "@/components/landing/ROISection";
-import WhatYouGet from "@/components/landing/WhatYouGet";
-import SampleVideos from "@/components/landing/SampleVideos";
-import Industries from "@/components/landing/Industries";
-import AIShortFilms from "@/components/landing/AIShortFilms";
-import HowItWorks from "@/components/landing/HowItWorks";
-import GlobalReach from "@/components/landing/GlobalReach";
-import TrustSection from "@/components/landing/TrustSection";
-import Testimonials from "@/components/landing/Testimonials";
-import UrgencySection from "@/components/landing/UrgencySection";
-import FinalCTA from "@/components/landing/FinalCTA";
-import Footer from "@/components/landing/Footer";
-import SocialShareButtons from "@/components/landing/SocialShareButtons";
-import LeadCapturePopup from "@/components/landing/LeadCapturePopup";
+
+// Lazy load below-the-fold components for better initial load performance
+const WhyEdgeAIHub = lazy(() => import("@/components/landing/WhyEdgeAIHub"));
+const AdTemplates = lazy(() => import("@/components/landing/AdTemplates"));
+const ROISection = lazy(() => import("@/components/landing/ROISection"));
+const WhatYouGet = lazy(() => import("@/components/landing/WhatYouGet"));
+const SampleVideos = lazy(() => import("@/components/landing/SampleVideos"));
+const Industries = lazy(() => import("@/components/landing/Industries"));
+const AIShortFilms = lazy(() => import("@/components/landing/AIShortFilms"));
+const HowItWorks = lazy(() => import("@/components/landing/HowItWorks"));
+const GlobalReach = lazy(() => import("@/components/landing/GlobalReach"));
+const TrustSection = lazy(() => import("@/components/landing/TrustSection"));
+const Testimonials = lazy(() => import("@/components/landing/Testimonials"));
+const UrgencySection = lazy(() => import("@/components/landing/UrgencySection"));
+const FinalCTA = lazy(() => import("@/components/landing/FinalCTA"));
+const Footer = lazy(() => import("@/components/landing/Footer"));
+const SocialShareButtons = lazy(() => import("@/components/landing/SocialShareButtons"));
+const LeadCapturePopup = lazy(() => import("@/components/landing/LeadCapturePopup"));
+
+// Minimal loading placeholder
+const SectionLoader = () => (
+  <div className="min-h-[200px] flex items-center justify-center">
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
@@ -290,24 +300,28 @@ const Index = () => {
         <a href="#hero-heading" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded">
           Skip to main content
         </a>
-        <SocialShareButtons />
-        <LeadCapturePopup />
+        <Suspense fallback={null}>
+          <SocialShareButtons />
+          <LeadCapturePopup />
+        </Suspense>
         <Navbar />
         <HeroSection />
-        <WhyEdgeAIHub />
-        <AdTemplates />
-        <ROISection />
-        <WhatYouGet />
-        <SampleVideos />
-        <AIShortFilms />
-        <Industries />
-        <HowItWorks />
-        <GlobalReach />
-        <Testimonials />
-        <TrustSection />
-        <UrgencySection />
-        <FinalCTA />
-        <Footer />
+        <Suspense fallback={<SectionLoader />}>
+          <WhyEdgeAIHub />
+          <AdTemplates />
+          <ROISection />
+          <WhatYouGet />
+          <SampleVideos />
+          <AIShortFilms />
+          <Industries />
+          <HowItWorks />
+          <GlobalReach />
+          <Testimonials />
+          <TrustSection />
+          <UrgencySection />
+          <FinalCTA />
+          <Footer />
+        </Suspense>
       </main>
     </>
   );

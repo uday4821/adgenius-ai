@@ -11,9 +11,12 @@ import AIShortFilms from "@/components/landing/AIShortFilms";
 import HowItWorks from "@/components/landing/HowItWorks";
 import GlobalReach from "@/components/landing/GlobalReach";
 import TrustSection from "@/components/landing/TrustSection";
+import Testimonials from "@/components/landing/Testimonials";
 import UrgencySection from "@/components/landing/UrgencySection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
+import SocialShareButtons from "@/components/landing/SocialShareButtons";
+import LeadCapturePopup from "@/components/landing/LeadCapturePopup";
 
 const Index = () => {
   return (
@@ -287,6 +290,8 @@ const Index = () => {
         <a href="#hero-heading" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded">
           Skip to main content
         </a>
+        <SocialShareButtons />
+        <LeadCapturePopup />
         <Navbar />
         <HeroSection />
         <WhyEdgeAIHub />
@@ -298,6 +303,7 @@ const Index = () => {
         <Industries />
         <HowItWorks />
         <GlobalReach />
+        <Testimonials />
         <TrustSection />
         <UrgencySection />
         <FinalCTA />

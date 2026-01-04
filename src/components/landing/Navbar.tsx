@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: "Samples", href: "#samples" },
     { name: "AI Short Films", href: "#ai-short-films" },
     { name: "How It Works", href: "#how-it-works" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (

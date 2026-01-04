@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { X, Gift, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,10 +18,17 @@ const LeadCapturePopup = () => {
       setIsOpen(true);
     }, 15000);
 
+    let scrollTicking = false;
     const handleScroll = () => {
-      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      if (scrollPercent > 50 && !localStorage.getItem("popup_dismissed")) {
-        setIsOpen(true);
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+          if (scrollPercent > 50 && !localStorage.getItem("popup_dismissed")) {
+            setIsOpen(true);
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
     };
 
@@ -33,12 +40,12 @@ const LeadCapturePopup = () => {
     };
   }, []);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsOpen(false);
     localStorage.setItem("popup_dismissed", "true");
-  };
+  }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name.trim() || !formData.phone.trim()) {
@@ -79,7 +86,7 @@ const LeadCapturePopup = () => {
     localStorage.setItem("popup_dismissed", "true");
     setIsOpen(false);
     setIsSubmitting(false);
-  };
+  }, [formData, toast]);
 
   if (!isOpen) return null;
 
@@ -169,4 +176,4 @@ const LeadCapturePopup = () => {
   );
 };
 
-export default LeadCapturePopup;
+export default memo(LeadCapturePopup);

@@ -1,12 +1,13 @@
+import { forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, ArrowRight, Sparkles } from "lucide-react";
 
-const FinalCTA = () => {
+const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
   const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I'm%20ready%20to%20get%20my%20AI%20video%20ad%20for%20₹199!";
   const emailLink = "mailto:contact@edgeaihub.in?subject=Ready%20for%20AI%20Video%20Ad";
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
+    <section ref={ref} className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-hero-gradient" />
       <div className="absolute inset-0 neural-bg" />
       
@@ -71,6 +72,8 @@ const FinalCTA = () => {
       </div>
     </section>
   );
-};
+});
 
-export default FinalCTA;
+FinalCTA.displayName = "FinalCTA";
+
+export default memo(FinalCTA);

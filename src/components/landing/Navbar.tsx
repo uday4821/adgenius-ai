@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = forwardRef<HTMLElement>((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
   const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20want%20to%20know%20more%20about%20your%20AI%20video%20ads!";
 
@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header role="banner">
+    <header ref={ref} role="banner">
       <nav className="fixed top-0 left-0 right-0 z-50 glass-strong" aria-label="Main navigation">
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -84,6 +84,8 @@ const Navbar = () => {
       </nav>
     </header>
   );
-};
+});
 
-export default Navbar;
+Navbar.displayName = "Navbar";
+
+export default memo(Navbar);

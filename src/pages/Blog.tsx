@@ -1,3 +1,4 @@
+import { forwardRef, memo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
@@ -69,7 +70,7 @@ const blogPosts = [
   }
 ];
 
-const Blog = () => {
+const Blog = forwardRef<HTMLElement>((_, ref) => {
   return (
     <>
       <Helmet>
@@ -101,7 +102,7 @@ const Blog = () => {
         </script>
       </Helmet>
       
-      <main className="min-h-screen bg-background">
+      <main ref={ref} className="min-h-screen bg-background">
         <Navbar />
         
         {/* Hero */}
@@ -202,6 +203,8 @@ const Blog = () => {
       </main>
     </>
   );
-};
+});
 
-export default Blog;
+Blog.displayName = "Blog";
+
+export default memo(Blog);

@@ -4,6 +4,14 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowRight, Clock, User } from "lucide-react";
 
+// Ultra-realistic professional images
+import modelProfessional from "@/assets/model-professional-realistic.jpg";
+import modelFashion from "@/assets/model-luxury-fashion.jpg";
+import modelCinematic from "@/assets/shortfilm-cinematic.jpg";
+import modelRealestate from "@/assets/model-realestate-realistic.jpg";
+import modelEcommerce from "@/assets/model-ecommerce-realistic.jpg";
+import modelJewelry from "@/assets/model-jewelry-luxury.jpg";
+
 const blogPosts = [
   {
     slug: "ai-video-ads-vs-traditional-agency",
@@ -12,7 +20,7 @@ const blogPosts = [
     category: "AI Marketing",
     readTime: "5 min read",
     date: "January 3, 2026",
-    image: "/assets/model-professional-realistic.jpg"
+    image: modelProfessional
   },
   {
     slug: "how-to-create-viral-instagram-ads",
@@ -21,7 +29,7 @@ const blogPosts = [
     category: "Social Media",
     readTime: "7 min read",
     date: "January 2, 2026",
-    image: "/assets/model-fashion-1.jpg"
+    image: modelFashion
   },
   {
     slug: "ai-short-films-future-of-brand-storytelling",
@@ -30,7 +38,7 @@ const blogPosts = [
     category: "AI Films",
     readTime: "6 min read",
     date: "January 1, 2026",
-    image: "/assets/shortfilm-cinematic.jpg"
+    image: modelCinematic
   },
   {
     slug: "real-estate-video-marketing-guide",
@@ -39,7 +47,7 @@ const blogPosts = [
     category: "Real Estate",
     readTime: "8 min read",
     date: "December 30, 2025",
-    image: "/assets/model-realestate-realistic.jpg"
+    image: modelRealestate
   },
   {
     slug: "ecommerce-video-ads-boost-sales",
@@ -48,7 +56,7 @@ const blogPosts = [
     category: "E-commerce",
     readTime: "6 min read",
     date: "December 28, 2025",
-    image: "/assets/model-ecommerce-realistic.jpg"
+    image: modelEcommerce
   },
   {
     slug: "jewelry-fashion-video-advertising",
@@ -57,7 +65,7 @@ const blogPosts = [
     category: "Luxury",
     readTime: "7 min read",
     date: "December 26, 2025",
-    image: "/assets/model-jewelry-luxury.jpg"
+    image: modelJewelry
   }
 ];
 

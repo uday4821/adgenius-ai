@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { ArrowRight, Clock, User } from "lucide-react";
+import { ArrowRight, Clock, User, Phone } from "lucide-react";
 
 // Ultra-realistic professional images
 import modelProfessional from "@/assets/model-professional-realistic.jpg";
@@ -189,13 +189,15 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
               Get a premium AI video ad for just ₹199 • 24-hour delivery
             </p>
             <a
-              href="https://wa.me/918919400755?text=Hi%20edgeaihub!%20I%20read%20your%20blog%20and%20want%20to%20create%20an%20AI%20video%20ad!"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              href="tel:+917207926206"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              💬 Get Started on WhatsApp
+              <Phone className="w-5 h-5" />
+              Call: +91 7207926206
             </a>
+            <p className="text-sm text-muted-foreground mt-4">
+              📞 WhatsApp / Call: +91 7207926206 • 📧 contact@edgeaihub.in
+            </p>
           </div>
         </section>
         

@@ -1,6 +1,6 @@
 import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const WhatYouGet = () => {
   const features = [
@@ -16,7 +16,7 @@ const WhatYouGet = () => {
     "Commercial usage rights",
   ];
 
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20want%20to%20get%20my%20AI%20video%20ad%20for%20₹199";
+  const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20for%20₹199";
 
   return (
     <section className="py-20 md:py-32 bg-card/30 relative overflow-hidden" aria-labelledby="what-you-get-heading">
@@ -70,14 +70,22 @@ const WhatYouGet = () => {
 
             {/* CTA */}
             <div className="text-center">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Get your AI video ad via WhatsApp">
-                <Button variant="whatsapp" size="xl">
-                  <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                  Get Your AI Ad Today
-                </Button>
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:+917207926206" aria-label="Call to get your AI video ad">
+                  <Button variant="hero" size="xl">
+                    <Phone className="w-5 h-5" aria-hidden="true" />
+                    Call: +91 7207926206
+                  </Button>
+                </a>
+                <a href={emailLink} aria-label="Email to get your AI video ad">
+                  <Button variant="glass" size="xl">
+                    <Mail className="w-5 h-5" aria-hidden="true" />
+                    Email Us
+                  </Button>
+                </a>
+              </div>
               <p className="text-sm text-muted-foreground mt-4">
-                No payment needed upfront • Chat with us first
+                📞 WhatsApp / Call: +91 7207926206 • Chat with us first
               </p>
             </div>
           </div>

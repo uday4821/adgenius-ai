@@ -1,10 +1,9 @@
 import { useState, forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 
 const Navbar = forwardRef<HTMLElement>((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20want%20to%20know%20more%20about%20your%20AI%20video%20ads!";
 
   const navLinks = [
     { name: "Why Us", href: "#why-us" },
@@ -36,10 +35,10 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                   {link.name}
                 </a>
               ))}
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Get your AI video ad on WhatsApp">
+              <a href="tel:+917207926206" aria-label="Call to get your AI video ad">
                 <Button variant="hero" size="sm">
-                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                  Get Your Ad
+                  <Phone className="w-4 h-4" aria-hidden="true" />
+                  +91 7207926206
                 </Button>
               </a>
             </div>
@@ -71,10 +70,10 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                     {link.name}
                   </a>
                 ))}
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                  <Button variant="whatsapp" className="w-full">
-                    <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                    Chat on WhatsApp
+                <a href="tel:+917207926206" aria-label="Call us">
+                  <Button variant="hero" className="w-full">
+                    <Phone className="w-4 h-4" aria-hidden="true" />
+                    Call: +91 7207926206
                   </Button>
                 </a>
               </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, memo } from "react";
-import { X, Gift, Sparkles } from "lucide-react";
+import { X, Gift, Sparkles, Mail, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const LeadCapturePopup = () => {
@@ -48,21 +48,21 @@ const LeadCapturePopup = () => {
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name.trim() || !formData.phone.trim()) {
+    if (!formData.name.trim() || !formData.email.trim()) {
       toast({
-        title: "Please fill all fields",
-        description: "Name and phone number are required",
+        title: "Please fill required fields",
+        description: "Name and email are required",
         variant: "destructive",
       });
       return;
     }
 
-    // Validate phone number (basic validation)
-    const phoneRegex = /^[+]?[\d\s-]{10,15}$/;
-    if (!phoneRegex.test(formData.phone.trim())) {
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
       toast({
-        title: "Invalid phone number",
-        description: "Please enter a valid phone number",
+        title: "Invalid email",
+        description: "Please enter a valid email address",
         variant: "destructive",
       });
       return;
@@ -70,17 +70,18 @@ const LeadCapturePopup = () => {
 
     setIsSubmitting(true);
 
-    // Send lead to WhatsApp
-    const message = encodeURIComponent(
-      `🎁 New Lead from Website Popup!\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email || "Not provided"}\n\nThis lead claimed the 20% discount offer.`
+    // Create mailto link with form data
+    const subject = encodeURIComponent("🎁 20% Discount Lead from Website Popup");
+    const body = encodeURIComponent(
+      `New Lead (20% Discount Claimed):\n\nName: ${formData.name}\nPhone: ${formData.phone || "Not provided"}\nEmail: ${formData.email}\n\n---\nThis lead claimed the 20% discount offer from the website popup.`
     );
-    
-    // Open WhatsApp with the lead info
-    window.open(`https://wa.me/918919400755?text=${message}`, "_blank");
+
+    // Open email client
+    window.location.href = `mailto:contact@edgeaihub.in?subject=${subject}&body=${body}`;
     
     toast({
       title: "🎉 Offer Claimed!",
-      description: "We'll contact you shortly with your 20% discount code!",
+      description: "Your email client is opening. Send the email to complete your inquiry!",
     });
     
     localStorage.setItem("popup_dismissed", "true");
@@ -137,35 +138,48 @@ const LeadCapturePopup = () => {
             
             <div>
               <input
-                type="tel"
-                placeholder="WhatsApp Number * (e.g., +91 9876543210)"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                type="email"
+                placeholder="Your Email *"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                maxLength={15}
+                maxLength={255}
                 required
               />
             </div>
             
             <div>
               <input
-                type="email"
-                placeholder="Email (Optional)"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                type="tel"
+                placeholder="Phone (Optional)"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                maxLength={255}
+                maxLength={15}
               />
             </div>
             
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
+              className="w-full py-4 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
             >
+              <Mail className="w-5 h-5" />
               {isSubmitting ? "Claiming..." : "🎁 Claim My 20% Discount"}
             </button>
           </form>
+          
+          {/* Contact Info */}
+          <div className="mt-4 pt-4 border-t border-border/50">
+            <p className="text-center text-sm text-muted-foreground mb-2">
+              Or contact us directly:
+            </p>
+            <div className="flex items-center justify-center gap-2">
+              <Phone className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">+91 7207926206</span>
+              <span className="text-xs text-muted-foreground">(WhatsApp / Call)</span>
+            </div>
+          </div>
           
           <p className="text-center text-xs text-muted-foreground mt-4">
             ✅ No spam • ✅ Instant response • ✅ 24hr delivery

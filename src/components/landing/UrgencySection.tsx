@@ -1,9 +1,8 @@
 import { Clock, Users, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 const UrgencySection = () => {
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20want%20to%20secure%20my%20spot%20for%20an%20AI%20video%20ad!";
   const emailLink = "mailto:contact@edgeaihub.in?subject=Urgent%20-%20AI%20Video%20Ad%20Inquiry";
 
   return (
@@ -46,10 +45,10 @@ const UrgencySection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl">
-                <MessageCircle className="w-5 h-5" />
-                Talk to edgeaihub Now
+            <a href="tel:+917207926206">
+              <Button variant="hero" size="xl">
+                <Phone className="w-5 h-5" />
+                Call Now: +91 7207926206
               </Button>
             </a>
             <a href={emailLink}>
@@ -59,6 +58,10 @@ const UrgencySection = () => {
               </Button>
             </a>
           </div>
+
+          <p className="text-muted-foreground mt-6">
+            📞 WhatsApp / Call: <strong className="text-foreground">+91 7207926206</strong>
+          </p>
         </div>
       </div>
     </section>

@@ -1,9 +1,9 @@
 import { forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail, ArrowRight, Sparkles } from "lucide-react";
+import { Mail, Phone, ArrowRight, Sparkles } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I'm%20ready%20to%20get%20my%20AI%20video%20ad%20for%20₹199!";
   const emailLink = "mailto:contact@edgeaihub.in?subject=Ready%20for%20AI%20Video%20Ad";
 
   return (
@@ -50,11 +50,16 @@ const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
             </ul>
           </div>
 
+          {/* Contact Form */}
+          <div className="max-w-md mx-auto mb-8">
+            <ContactForm variant="compact" />
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl" className="text-lg">
-                <MessageCircle className="w-6 h-6" />
-                Chat with Us on WhatsApp
+            <a href="tel:+917207926206">
+              <Button variant="hero" size="xl" className="text-lg">
+                <Phone className="w-6 h-6" />
+                Call: +91 7207926206
               </Button>
             </a>
             <a href={emailLink}>
@@ -66,7 +71,7 @@ const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           <p className="text-muted-foreground">
-            No payment forms. No commitments. Just start a conversation.
+            📞 WhatsApp / Call: <strong className="text-foreground">+91 7207926206</strong> • No payment forms. No commitments. Just start a conversation.
           </p>
         </div>
       </div>

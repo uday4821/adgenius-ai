@@ -1,28 +1,17 @@
 import { memo, useCallback } from "react";
-import { Share2, MessageCircle } from "lucide-react";
+import { Share2 } from "lucide-react";
 
 const SocialShareButtons = () => {
   const shareUrl = "https://ai.edgeaihub.in";
   const shareText = "🔥 Get Premium AI Video Ads for just ₹199! Trusted by 10,000+ businesses. Check out edgeaihub:";
   
   const shareLinks = {
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`,
     instagram: "https://www.instagram.com/edge_aihub",
   };
 
   return (
     <div className="fixed left-4 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">
-      <a
-        href={shareLinks.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-12 h-12 bg-[#25D366] hover:bg-[#128C7E] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 group"
-        aria-label="Share on WhatsApp"
-      >
-        <MessageCircle className="w-6 h-6 text-white" />
-      </a>
-      
       <a
         href={shareLinks.facebook}
         target="_blank"

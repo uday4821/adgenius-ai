@@ -1,8 +1,7 @@
 import { forwardRef, memo } from "react";
-import { MessageCircle, Mail, Globe, Instagram, Facebook, Film, Sparkles } from "lucide-react";
+import { Phone, Mail, Globe, Instagram, Facebook, Film, Sparkles } from "lucide-react";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
-  const whatsappLink = "https://wa.me/918919400755";
   const emailLink = "mailto:contact@edgeaihub.in";
   const instagramLink = "https://www.instagram.com/edge_aihub?igsh=MW4zZzBtZWFpbnI0MQ==";
   const facebookLink = "https://www.facebook.com/edgeaihub/";
@@ -97,15 +96,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <h3 className="font-semibold text-foreground mb-4">Get in Touch</h3>
             <div className="space-y-3">
               <a 
-                href={whatsappLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="tel:+917207926206"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Contact us on WhatsApp: +91 8919400755"
+                aria-label="Call us: +91 7207926206"
               >
-                <MessageCircle className="w-4 h-4" aria-hidden="true" />
-                <span className="text-sm">+91 8919400755</span>
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                <span className="text-sm">+91 7207926206</span>
               </a>
+              <p className="flex items-center gap-2 text-xs text-muted-foreground/70 ml-6">
+                (WhatsApp / Call)
+              </p>
               <a 
                 href={emailLink}
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"

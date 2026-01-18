@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail, Sparkles, Zap, Globe, Clock } from "lucide-react";
+import { Mail, Phone, Sparkles, Zap, Globe, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20want%20to%20get%20my%20AI%20video%20ad%20for%20₹199";
   const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20Inquiry";
 
   return (
@@ -72,20 +71,25 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up-delay-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp chat for AI video ad inquiry">
-              <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                Chat with Us on WhatsApp
-              </Button>
-            </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 animate-slide-up-delay-4">
             <a href={emailLink} aria-label="Send email inquiry for AI video ads">
-              <Button variant="glass" size="xl" className="w-full sm:w-auto">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Mail className="w-5 h-5" aria-hidden="true" />
                 Contact via Email
               </Button>
             </a>
+            <a href="tel:+917207926206" aria-label="Call us for AI video ads">
+              <Button variant="glass" size="xl" className="w-full sm:w-auto">
+                <Phone className="w-5 h-5" aria-hidden="true" />
+                Call: +91 7207926206
+              </Button>
+            </a>
           </div>
+
+          {/* Contact Info */}
+          <p className="text-muted-foreground mb-12 animate-slide-up-delay-4">
+            📞 WhatsApp / Call: <strong className="text-foreground">+91 7207926206</strong> • 📧 Email: <strong className="text-foreground">contact@edgeaihub.in</strong>
+          </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" role="list" aria-label="Business statistics">

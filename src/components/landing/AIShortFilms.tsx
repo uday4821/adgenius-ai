@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Film, Clapperboard, Star, Globe, Award, Play } from "lucide-react";
+import { Mail, Film, Clapperboard, Star, Globe, Award, Play, Phone } from "lucide-react";
 import shortfilmCinematic from "@/assets/shortfilm-cinematic.jpg";
 import { useState, useRef } from "react";
 
 const AIShortFilms = () => {
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I'm%20interested%20in%20AI%20Short%20Films%20production%20for%20international%20markets";
+  const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Short%20Films%20Production%20Inquiry";
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -84,12 +84,20 @@ const AIShortFilms = () => {
               ))}
             </div>
 
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                Discuss Your Film Project
-              </Button>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="tel:+917207926206">
+                <Button variant="hero" size="xl" className="w-full sm:w-auto">
+                  <Phone className="w-5 h-5" />
+                  Call: +91 7207926206
+                </Button>
+              </a>
+              <a href={emailLink}>
+                <Button variant="glass" size="xl" className="w-full sm:w-auto">
+                  <Mail className="w-5 h-5" />
+                  Discuss Your Film Project
+                </Button>
+              </a>
+            </div>
           </div>
 
           {/* Video/Image Side */}

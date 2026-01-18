@@ -1,12 +1,12 @@
-import { MessageCircle, FileText, Video } from "lucide-react";
+import { Mail, FileText, Video } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      icon: MessageCircle,
-      title: "Message Us",
-      description: "Start a WhatsApp chat with our team. Tell us about your business and goals.",
+      icon: Mail,
+      title: "Contact Us",
+      description: "Email us or call +91 7207926206. Tell us about your business and goals.",
       color: "primary",
     },
     {

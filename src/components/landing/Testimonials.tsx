@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Phone } from "lucide-react";
 
 const testimonials = [
   {
@@ -121,13 +121,15 @@ const Testimonials = () => {
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Ready to get results like these?</p>
           <a
-            href="https://wa.me/918919400755?text=Hi%20edgeaihub!%20I%20saw%20your%20testimonials%20and%20want%20to%20get%20similar%20results%20for%20my%20business!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            href="tel:+917207926206"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            💬 Get Your AI Video Ad Now
+            <Phone className="w-5 h-5" />
+            Call: +91 7207926206
           </a>
+          <p className="text-sm text-muted-foreground mt-4">
+            📞 WhatsApp / Call: +91 7207926206
+          </p>
         </div>
       </div>
     </section>

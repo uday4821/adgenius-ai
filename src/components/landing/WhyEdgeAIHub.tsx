@@ -36,7 +36,7 @@ const WhyEdgeAIHub = () => {
       type: "good",
       title: "edgeaihub",
       points: [
-        "Just ₹199 per premium video",
+        "Affordable premium video ads",
         "24-hour delivery guaranteed",
         "Conversion-optimized templates",
         "Scale unlimited ads instantly",
@@ -56,7 +56,7 @@ const WhyEdgeAIHub = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Agencies charge lakhs. Freelancers disappoint. Generic tools fail. 
-            We deliver premium quality at ₹199.
+            We deliver premium quality at affordable prices.
           </p>
         </header>
 

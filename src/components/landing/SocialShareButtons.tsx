@@ -3,7 +3,7 @@ import { Share2 } from "lucide-react";
 
 const SocialShareButtons = () => {
   const shareUrl = "https://ai.edgeaihub.in";
-  const shareText = "🔥 Get Premium AI Video Ads for just ₹199! Trusted by 10,000+ businesses. Check out edgeaihub:";
+  const shareText = "🔥 Get Premium AI Video Ads! Trusted by 10,000+ businesses. Check out edgeaihub:";
   
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`,

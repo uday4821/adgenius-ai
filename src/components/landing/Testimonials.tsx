@@ -7,7 +7,7 @@ const testimonials = [
     role: "Fashion Brand Owner",
     location: "Mumbai, India",
     rating: 5,
-    text: "Got 10x more engagement on my Instagram ads! The AI video was so professional that my customers thought I hired a big agency. Best ₹199 I ever spent!",
+    text: "Got 10x more engagement on my Instagram ads! The AI video was so professional that my customers thought I hired a big agency. Absolutely worth it!",
     result: "10x Engagement"
   },
   {

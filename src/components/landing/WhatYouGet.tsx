@@ -16,7 +16,7 @@ const WhatYouGet = () => {
     "Commercial usage rights",
   ];
 
-  const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20for%20₹199";
+  const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20Inquiry";
 
   return (
     <section className="py-20 md:py-32 bg-card/30 relative overflow-hidden" aria-labelledby="what-you-get-heading">
@@ -25,24 +25,24 @@ const WhatYouGet = () => {
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
           <header className="text-center mb-12">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Unbeatable Value</span>
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Complete Package</span>
             <h2 id="what-you-get-heading" className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-              What You Get for <span className="text-gradient">₹199</span>
+              What's <span className="text-gradient">Included</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Premium quality that agencies charge ₹50,000+ for. No hidden fees. No surprises.
+              Premium quality that agencies charge lakhs for. No hidden fees. No surprises.
             </p>
           </header>
 
           <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-b from-card to-background border border-border/50 relative">
-            {/* Price Badge */}
+            {/* Badge */}
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <div className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-display font-bold text-xl shadow-lg shadow-primary/30">
-                Just ₹199
+                Premium Quality
               </div>
             </div>
 
-            <ul className="grid md:grid-cols-2 gap-4 mb-10 mt-6" role="list" aria-label="Features included in ₹199 package">
+            <ul className="grid md:grid-cols-2 gap-4 mb-10 mt-6" role="list" aria-label="Features included in package">
               {features.map((feature, index) => (
                 <li
                   key={index}

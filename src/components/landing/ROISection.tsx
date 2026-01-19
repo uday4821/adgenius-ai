@@ -1,10 +1,10 @@
-import { ArrowRight, TrendingUp, DollarSign, BarChart3, Target } from "lucide-react";
+import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Target } from "lucide-react";
 
 const ROISection = () => {
   const steps = [
     {
-      icon: DollarSign,
-      title: "₹199 Investment",
+      icon: Lightbulb,
+      title: "Smart Investment",
       description: "Create premium video ads at minimal cost — test multiple creatives rapidly.",
       color: "primary",
     },
@@ -36,7 +36,7 @@ const ROISection = () => {
         <div className="text-center mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">The Math Makes Sense</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Transform ₹199 Into <span className="text-gradient">₹1,00,000+ ROI</span>
+            Transform Your Investment Into <span className="text-gradient">Massive ROI</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Smart business owners understand: <strong className="text-foreground">better creatives = better performance = higher profits</strong>. 
@@ -71,7 +71,7 @@ const ROISection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/30 text-center">
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Result: <span className="text-gradient">10x - 100x Return on Your ₹199</span>
+              Result: <span className="text-gradient">10x - 100x Return on Investment</span>
             </h3>
             <p className="text-muted-foreground mb-6">
               Businesses using edgeaihub report <strong className="text-foreground">50-70% lower cost per acquisition</strong> and 
@@ -79,12 +79,12 @@ const ROISection = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-8">
               <div>
-                <div className="text-3xl font-display font-bold text-primary">₹199</div>
+                <div className="text-3xl font-display font-bold text-primary">Affordable</div>
                 <div className="text-sm text-muted-foreground">Your Investment</div>
               </div>
               <div className="text-2xl font-bold text-muted-foreground">=</div>
               <div>
-                <div className="text-3xl font-display font-bold text-secondary">₹1L+</div>
+                <div className="text-3xl font-display font-bold text-secondary">10x-100x</div>
                 <div className="text-sm text-muted-foreground">Potential Returns</div>
               </div>
             </div>

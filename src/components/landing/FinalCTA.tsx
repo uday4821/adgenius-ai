@@ -30,14 +30,14 @@ const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Every day you wait, you lose customers to businesses with better video content. 
-            <strong className="text-foreground"> ₹199 stands between you and premium AI video ads.</strong>
+            <strong className="text-foreground"> Contact us today for premium AI video ads.</strong>
           </p>
 
           <div className="p-8 rounded-3xl glass-strong mb-10 max-w-2xl mx-auto">
             <h3 className="font-display text-2xl font-bold mb-4">Why Choose edgeaihub?</h3>
             <ul className="text-left space-y-3 mb-6">
               {[
-                "Agencies charge ₹50,000+ — we charge ₹199",
+                "Agencies charge lakhs — we're affordable",
                 "Weeks of waiting — we deliver in 24 hours",
                 "Inconsistent quality — we guarantee premium output",
                 "Complex processes — we make it effortless",

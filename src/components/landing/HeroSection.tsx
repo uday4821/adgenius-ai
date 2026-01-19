@@ -57,7 +57,7 @@ const HeroSection = () => {
           <h1 id="hero-heading" className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up-delay-1">
             Premium AI Video Ads
             <br />
-            <span className="text-gradient">Just ₹199</span>
+            <span className="text-gradient">For Your Business</span>
           </h1>
 
           {/* Subheadline */}
@@ -95,9 +95,9 @@ const HeroSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" role="list" aria-label="Business statistics">
             {[
               { value: "10,000+", label: "Ads Created" },
-              { value: "₹199", label: "Per Video" },
-              { value: "24hrs", label: "Delivery Time" },
+              { value: "24hrs", label: "Fast Delivery" },
               { value: "50+", label: "Countries Served" },
+              { value: "100%", label: "Satisfaction" },
             ].map((stat, index) => (
               <div key={index} className="glass-strong p-4 rounded-2xl text-center" role="listitem">
                 <div className="text-2xl md:text-3xl font-display font-bold text-gradient">{stat.value}</div>

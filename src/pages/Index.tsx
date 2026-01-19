@@ -30,16 +30,16 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Premium AI Video Ads ₹199 | AI Short Films | edgeaihub - #1 Global AI Advertising</title>
+        <title>Premium AI Video Ads | AI Short Films | edgeaihub - #1 Global AI Advertising</title>
         <meta 
           name="description" 
-          content="Get studio-quality 30-second AI video ads for just ₹199 + Hollywood-level AI Short Films. Trusted by 10,000+ businesses in 50+ countries. Fashion, jewelry, e-commerce, real estate ads. Fast 24hr delivery. Contact edgeaihub today!" 
+          content="Get studio-quality 30-second AI video ads + Hollywood-level AI Short Films. Trusted by 10,000+ businesses in 50+ countries. Fashion, jewelry, e-commerce, real estate ads. Fast 24hr delivery. Contact edgeaihub today!" 
         />
         <meta name="keywords" content="AI video ads, AI short films, AI advertising, affordable AI ads India, AI video production, AI fashion ads, AI jewelry ads, AI e-commerce ads, AI real estate ads, global AI advertising, premium video ads, conversion focused ads, viral video ads, social media ads, Instagram ads, Facebook ads, YouTube ads, AI movie production, cinematic AI videos, brand videos, product videos, AI generated videos, video marketing India, digital marketing agency, promotional videos, corporate videos, startup videos" />
         <link rel="canonical" href="https://ai.edgeaihub.in" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Premium AI Video Ads ₹199 | AI Short Films | edgeaihub" />
+        <meta property="og:title" content="Premium AI Video Ads | AI Short Films | edgeaihub" />
         <meta property="og:description" content="Get studio-quality AI video ads & cinematic AI short films. Trusted by 10,000+ businesses in 50+ countries. 24-hour delivery." />
         <meta property="og:url" content="https://ai.edgeaihub.in" />
         <meta property="og:type" content="website" />
@@ -52,7 +52,7 @@ const Index = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Premium AI Video Ads ₹199 | AI Short Films | edgeaihub" />
+        <meta name="twitter:title" content="Premium AI Video Ads | AI Short Films | edgeaihub" />
         <meta name="twitter:description" content="Get studio-quality AI video ads & AI short films. 24-hour delivery. Global service." />
         <meta name="twitter:image" content="https://ai.edgeaihub.in/og-image.jpg" />
         <meta name="twitter:site" content="@edgeaihub" />
@@ -99,7 +99,7 @@ const Index = () => {
               "width": 512,
               "height": 512
             },
-            "description": "Premium AI Video Ads & AI Short Films for businesses worldwide at ₹199",
+            "description": "Premium AI Video Ads & AI Short Films for businesses worldwide",
             "foundingDate": "2024",
             "founder": {
               "@type": "Person",
@@ -131,7 +131,7 @@ const Index = () => {
               "@type": "GeoShape",
               "name": "Worldwide"
             },
-            "slogan": "Premium AI Video Ads at ₹199"
+            "slogan": "Premium AI Video Ads for Your Business"
           })}
         </script>
         
@@ -152,11 +152,8 @@ const Index = () => {
               {
                 "@type": "Offer",
                 "name": "Premium AI Video Ad",
-                "price": "199",
-                "priceCurrency": "INR",
                 "description": "30-second premium AI video ad with professional voiceover and music",
                 "availability": "https://schema.org/InStock",
-                "priceValidUntil": "2026-12-31",
                 "url": "https://ai.edgeaihub.in"
               },
               {
@@ -215,7 +212,7 @@ const Index = () => {
                 "name": "How much does an AI video ad cost?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Premium AI video ads start at just ₹199 for a 30-second video. This includes professional voiceover, trending music, text animations, and multi-platform formats optimized for Instagram, Facebook, YouTube, and more."
+                  "text": "We offer affordable premium AI video ads for 30-second videos. This includes professional voiceover, trending music, text animations, and multi-platform formats optimized for Instagram, Facebook, YouTube, and more. Contact us for pricing."
                 }
               },
               {
@@ -262,7 +259,7 @@ const Index = () => {
             "@id": "https://ai.edgeaihub.in/#website",
             "url": "https://ai.edgeaihub.in",
             "name": "edgeaihub - Premium AI Video Ads",
-            "description": "Get studio-quality AI video ads for just ₹199",
+            "description": "Get studio-quality AI video ads for your business",
             "publisher": {
               "@type": "Organization",
               "@id": "https://ai.edgeaihub.in/#organization"
@@ -282,7 +279,7 @@ const Index = () => {
             "url": "https://ai.edgeaihub.in",
             "telephone": "+91-8919400755",
             "email": "contact@edgeaihub.in",
-            "priceRange": "₹199 - ₹10,000",
+            "priceRange": "Affordable",
             "currenciesAccepted": "INR, USD, GBP, EUR, AED",
             "paymentAccepted": "UPI, Bank Transfer, PayPal",
             "areaServed": ["India", "USA", "UK", "UAE", "Australia", "Canada", "Singapore", "Germany", "France", "Japan"],

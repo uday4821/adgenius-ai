@@ -15,11 +15,9 @@ const HowItWorks = lazy(() => import("@/components/landing/HowItWorks"));
 const GlobalReach = lazy(() => import("@/components/landing/GlobalReach"));
 const TrustSection = lazy(() => import("@/components/landing/TrustSection"));
 const Testimonials = lazy(() => import("@/components/landing/Testimonials"));
-const UrgencySection = lazy(() => import("@/components/landing/UrgencySection"));
 const FinalCTA = lazy(() => import("@/components/landing/FinalCTA"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 const SocialShareButtons = lazy(() => import("@/components/landing/SocialShareButtons"));
-const LeadCapturePopup = lazy(() => import("@/components/landing/LeadCapturePopup"));
 
 // Minimal loading placeholder
 const SectionLoader = () => (
@@ -302,7 +300,6 @@ const Index = () => {
         </a>
         <Suspense fallback={null}>
           <SocialShareButtons />
-          <LeadCapturePopup />
         </Suspense>
         <Navbar />
         <HeroSection />
@@ -318,7 +315,6 @@ const Index = () => {
           <GlobalReach />
           <Testimonials />
           <TrustSection />
-          <UrgencySection />
           <FinalCTA />
           <Footer />
         </Suspense>

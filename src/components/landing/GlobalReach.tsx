@@ -4,15 +4,14 @@ import globalBusiness from "@/assets/global-business-team.jpg";
 
 const GlobalReach = () => {
   const stats = [
-    { icon: Globe, value: "50+", label: "Countries Served" },
-    { icon: Users, value: "10,000+", label: "Happy Clients" },
-    { icon: TrendingUp, value: "1M+", label: "Views Generated" },
+    { icon: Globe, value: "5+", label: "Countries Served" },
+    { icon: Users, value: "1,000+", label: "Ads Delivered" },
+    { icon: TrendingUp, value: "50K+", label: "Views Generated" },
     { icon: Zap, value: "24hr", label: "Delivery Time" },
   ];
 
   const countries = [
-    "India", "USA", "UK", "Canada", "Australia", "UAE", "Singapore", 
-    "Germany", "France", "Netherlands", "Japan", "South Korea"
+    "India", "USA", "UK", "UAE", "Australia"
   ];
 
   return (
@@ -92,7 +91,7 @@ const GlobalReach = () => {
               </span>
             ))}
             <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              + 40 more
+              & growing
             </span>
           </div>
         </div>

@@ -168,9 +168,12 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
                     </div>
                     
                     <div className="mt-4 pt-4 border-t border-border/30">
-                      <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                      <Link 
+                        to={`/blog/${post.slug}`}
+                        className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all"
+                      >
                         Read Article <ArrowRight className="w-4 h-4" />
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -183,10 +186,10 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
         <section className="py-16 bg-gradient-to-r from-primary/10 to-accent/10">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Ready to Create Your Own Viral Video Ad?
+              Ready to Create Your Own AI Video Ad?
             </h2>
             <p className="text-muted-foreground mb-6">
-              Get a premium AI video ad for just ₹199 • 24-hour delivery
+              Get a premium AI video ad with 24-hour delivery
             </p>
             <a
               href="tel:+917207926206"

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { ArrowLeft, Clock, User, Phone, Share2, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, User, Phone, Share2, Calendar, Tag } from "lucide-react";
 
 // Ultra-realistic professional images
 import modelProfessional from "@/assets/model-professional-realistic.jpg";
@@ -16,6 +16,9 @@ import modelJewelry from "@/assets/model-jewelry-luxury.jpg";
 interface BlogPost {
   slug: string;
   title: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
   excerpt: string;
   category: string;
   readTime: string;
@@ -28,6 +31,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "ai-video-ads-vs-traditional-agency",
     title: "AI Video Ads vs Traditional Agencies: Why Smart Businesses Are Switching",
+    metaTitle: "AI Video Ads vs Traditional Agencies 2025 | 90% Cost Savings | edgeaihub",
+    metaDescription: "Discover why 10,000+ businesses choose AI video ads over agencies. 90% cost savings, 24-hour delivery, better ROI. India's #1 AI video ad service.",
+    keywords: ["AI video ads", "AI vs traditional agency", "AI video advertising India", "cheap video ads", "fast video production", "AI marketing agency", "video ad cost comparison", "best AI video ads"],
     excerpt: "Discover why 10,000+ businesses are choosing AI-powered video ads over expensive traditional agencies. Learn about the 90% cost savings and faster delivery.",
     category: "AI Marketing",
     readTime: "5 min read",
@@ -64,6 +70,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "how-to-create-viral-instagram-ads",
     title: "How to Create Viral Instagram Ads That Convert in 2026",
+    metaTitle: "Viral Instagram Ads Guide 2025 | Instagram Reels Marketing | edgeaihub",
+    metaDescription: "Learn to create viral Instagram Reels & video ads that convert. Expert tips on hooks, CTAs, and strategies. 1000+ successful campaigns delivered.",
+    keywords: ["viral Instagram ads", "Instagram Reels marketing", "Instagram video ads", "social media video ads", "Instagram ad tips", "viral video marketing", "Instagram advertising India", "Reels ads strategy"],
     excerpt: "Learn the secrets behind viral Instagram video ads. From hooks to CTAs, we reveal what makes viewers stop scrolling and start buying.",
     category: "Social Media",
     readTime: "7 min read",
@@ -108,6 +117,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "ai-short-films-future-of-brand-storytelling",
     title: "AI Short Films: The Future of Brand Storytelling",
+    metaTitle: "AI Short Films for Brands | Hollywood-Quality AI Videos | edgeaihub",
+    metaDescription: "Create Hollywood-quality AI short films for your brand. Cinematic storytelling at 95% lower cost. Transform your brand narrative with AI filmmaking.",
+    keywords: ["AI short films", "AI filmmaking", "brand storytelling", "AI cinema", "corporate video production", "AI video production", "brand films India", "cinematic AI videos"],
     excerpt: "Hollywood-quality films at a fraction of the cost. Explore how AI is revolutionizing brand storytelling and why your competitors are already using it.",
     category: "AI Films",
     readTime: "6 min read",
@@ -149,6 +161,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "real-estate-video-marketing-guide",
     title: "Complete Guide to Real Estate Video Marketing in India",
+    metaTitle: "Real Estate Video Marketing India 2025 | Property Video Ads | edgeaihub",
+    metaDescription: "Sell properties 3x faster with AI video tours. Complete guide to real estate video marketing in India. Virtual tours, drone footage, lifestyle videos.",
+    keywords: ["real estate video marketing", "property video ads", "real estate video India", "virtual property tours", "real estate advertising", "property marketing video", "real estate AI video", "property promotional video"],
     excerpt: "Sell properties faster with video marketing. Learn how top real estate developers are using AI video ads to close deals in record time.",
     category: "Real Estate",
     readTime: "8 min read",
@@ -190,6 +205,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "ecommerce-video-ads-boost-sales",
     title: "5 E-commerce Video Ad Strategies to 10x Your Sales",
+    metaTitle: "E-commerce Video Ads | 10x Sales Strategy 2025 | edgeaihub",
+    metaDescription: "Boost e-commerce sales 10x with AI video ads. Product demos, UGC testimonials, and conversion strategies used by top D2C brands in India.",
+    keywords: ["ecommerce video ads", "product video marketing", "D2C video ads", "online store video", "ecommerce advertising", "product demo videos", "shopping video ads", "ecommerce AI video"],
     excerpt: "From product demos to testimonial videos, discover the video ad strategies that top D2C brands use to dominate their market.",
     category: "E-commerce",
     readTime: "6 min read",
@@ -235,6 +253,9 @@ const blogPosts: BlogPost[] = [
   {
     slug: "jewelry-fashion-video-advertising",
     title: "Luxury Jewelry & Fashion Video Advertising: A Complete Guide",
+    metaTitle: "Jewelry & Fashion Video Ads | Luxury Brand Marketing | edgeaihub",
+    metaDescription: "Create stunning jewelry and fashion video ads that drive 5x ROAS. Luxury brand video marketing strategies for Instagram, Facebook & YouTube.",
+    keywords: ["jewelry video ads", "fashion video advertising", "luxury brand video", "jewelry marketing", "fashion ad production", "luxury video marketing", "jewelry promotional video", "fashion brand video"],
     excerpt: "Create stunning video ads that showcase your jewelry and fashion products in their best light. Tips from brands that achieved 5x ROAS.",
     category: "Luxury",
     readTime: "7 min read",

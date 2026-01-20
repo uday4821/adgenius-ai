@@ -74,30 +74,61 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
   return (
     <>
       <Helmet>
-        <title>AI Video Marketing Blog | Tips & Guides | edgeaihub</title>
+        <title>AI Video Ads | Best AI Video Marketing Agency India 2025 | edgeaihub</title>
         <meta 
           name="description" 
-          content="Learn AI video marketing strategies, tips, and guides. Discover how to create viral video ads, boost conversions, and grow your business with AI-powered content." 
+          content="India's #1 AI video ad agency. Create viral Instagram Reels, Facebook ads & YouTube videos with AI. 1000+ ads delivered. 24-hour delivery. Free consultation." 
         />
-        <meta name="keywords" content="AI video marketing, video ad tips, Instagram ads guide, AI advertising blog, video marketing strategies, social media video tips" />
+        <meta name="keywords" content="AI video ads, AI video marketing, best AI video agency India, AI advertisement maker, AI video generator for business, Instagram Reels maker, Facebook video ads, YouTube ads AI, viral video ads, AI commercial production, video ad agency India, AI marketing agency, automated video ads, AI video content creator, professional video ads, social media video marketing, AI advertising India, video marketing 2025, ecommerce video ads, real estate video marketing, restaurant video ads, fashion video advertising" />
         <link rel="canonical" href="https://ai.edgeaihub.in/blog" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="author" content="edgeaihub" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="revisit-after" content="1 days" />
         
-        <meta property="og:title" content="AI Video Marketing Blog | edgeaihub" />
-        <meta property="og:description" content="Learn AI video marketing strategies and tips to grow your business." />
+        <meta property="og:title" content="AI Video Ads | Best AI Video Marketing Agency India | edgeaihub" />
+        <meta property="og:description" content="India's #1 AI video ad agency. Create viral video ads with AI. 1000+ ads delivered across 5+ countries." />
         <meta property="og:url" content="https://ai.edgeaihub.in/blog" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ai.edgeaihub.in/og-image.jpg" />
+        <meta property="og:site_name" content="edgeaihub" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Video Ads | Best AI Video Marketing Agency India" />
+        <meta name="twitter:description" content="Create viral AI video ads. 1000+ ads delivered. 24-hour delivery." />
+        <meta name="twitter:image" content="https://ai.edgeaihub.in/og-image.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Blog",
-            "name": "edgeaihub Blog",
-            "description": "AI Video Marketing Tips, Strategies & Guides",
+            "name": "edgeaihub - AI Video Marketing Blog",
+            "description": "Expert insights on AI video ads, digital marketing, and video advertising strategies",
             "url": "https://ai.edgeaihub.in/blog",
             "publisher": {
               "@type": "Organization",
-              "name": "edgeaihub"
+              "name": "edgeaihub",
+              "logo": { "@type": "ImageObject", "url": "https://ai.edgeaihub.in/og-image.jpg" }
+            },
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": blogPosts.map((post, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "url": `https://ai.edgeaihub.in/blog/${post.slug}`
+              }))
             }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "edgeaihub",
+            "url": "https://ai.edgeaihub.in",
+            "logo": "https://ai.edgeaihub.in/og-image.jpg",
+            "sameAs": ["https://www.instagram.com/edgeaihub", "https://www.facebook.com/edgeaihub"],
+            "contactPoint": { "@type": "ContactPoint", "telephone": "+91-7207926206", "contactType": "sales" }
           })}
         </script>
       </Helmet>

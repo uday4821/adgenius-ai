@@ -124,6 +124,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <Globe className="w-4 h-4" aria-hidden="true" />
                 <span className="text-sm">www.edgeaihub.in</span>
               </a>
+              
+              {/* Office Address */}
+              <div className="pt-3 mt-3 border-t border-border/30">
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  <strong className="text-foreground">📍 Office:</strong><br />
+                  2nd Floor, SK Complex,<br />
+                  Attibele-Anekal Road,<br />
+                  Attibele, Bangalore - 562107
+                </p>
+              </div>
             </div>
           </address>
         </div>

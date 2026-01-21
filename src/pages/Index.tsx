@@ -107,20 +107,28 @@ const Index = () => {
             "contactPoint": [
               {
                 "@type": "ContactPoint",
-                "telephone": "+91-8919400755",
+                "telephone": "+91-7207926206",
                 "contactType": "customer service",
                 "email": "contact@edgeaihub.in",
-                "availableLanguage": ["English", "Hindi"],
+                "availableLanguage": ["English", "Hindi", "Kannada", "Telugu"],
                 "areaServed": "Worldwide"
               },
               {
                 "@type": "ContactPoint",
-                "telephone": "+91-8919400755",
+                "telephone": "+91-7207926206",
                 "contactType": "sales",
                 "email": "contact@edgeaihub.in",
-                "availableLanguage": ["English", "Hindi"]
+                "availableLanguage": ["English", "Hindi", "Kannada", "Telugu"]
               }
             ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2nd Floor, SK Complex, Attibele-Anekal Road",
+              "addressLocality": "Attibele",
+              "addressRegion": "Karnataka",
+              "postalCode": "562107",
+              "addressCountry": "IN"
+            },
             "sameAs": [
               "https://www.instagram.com/edge_aihub",
               "https://www.facebook.com/edgeaihub",
@@ -274,17 +282,66 @@ const Index = () => {
             "@type": "LocalBusiness",
             "@id": "https://ai.edgeaihub.in/#localbusiness",
             "name": "edgeaihub",
-            "description": "Premium AI Video Ads & AI Short Films Production Company",
+            "alternateName": "Edge AI Hub",
+            "description": "India's #1 Premium AI Video Ads & AI Short Films Production Company. Get studio-quality 30-second video ads with 24-hour delivery.",
             "url": "https://ai.edgeaihub.in",
-            "telephone": "+91-8919400755",
+            "telephone": "+91-7207926206",
             "email": "contact@edgeaihub.in",
-            "priceRange": "Affordable",
+            "image": "https://ai.edgeaihub.in/og-image.jpg",
+            "logo": "https://ai.edgeaihub.in/og-image.jpg",
+            "priceRange": "$$",
             "currenciesAccepted": "INR, USD, GBP, EUR, AED",
-            "paymentAccepted": "UPI, Bank Transfer, PayPal",
-            "areaServed": ["India", "USA", "UK", "UAE", "Australia", "Canada", "Singapore", "Germany", "France", "Japan"],
-            "serviceArea": {
-              "@type": "GeoShape",
-              "name": "Worldwide"
+            "paymentAccepted": "UPI, Bank Transfer, PayPal, Credit Card",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2nd Floor, SK Complex, Attibele-Anekal Road",
+              "addressLocality": "Attibele",
+              "addressRegion": "Karnataka",
+              "postalCode": "562107",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.7784",
+              "longitude": "77.7674"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "20:00"
+              }
+            ],
+            "areaServed": [
+              {"@type": "Country", "name": "India"},
+              {"@type": "Country", "name": "United States"},
+              {"@type": "Country", "name": "United Kingdom"},
+              {"@type": "Country", "name": "United Arab Emirates"},
+              {"@type": "Country", "name": "Australia"},
+              {"@type": "Country", "name": "Canada"},
+              {"@type": "Country", "name": "Singapore"}
+            ],
+            "sameAs": [
+              "https://www.instagram.com/edge_aihub",
+              "https://www.facebook.com/edgeaihub",
+              "https://www.edgeaihub.in"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "AI Video Services",
+              "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Video Ads"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Short Films"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand Videos"}}
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "1000",
+              "bestRating": "5",
+              "worstRating": "1"
             }
           })}
         </script>

@@ -195,7 +195,7 @@ const ContactForm = ({ variant = "default", className = "" }: ContactFormProps) 
           </a>
         </div>
         <p className="text-center text-xs text-muted-foreground mt-3">
-          📞 Call or WhatsApp: +91 7207926206
+          📞 Call: +91 7207926206 • Available Mon-Sat, 9am-8pm IST
         </p>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { useState, forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = forwardRef<HTMLElement>((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                   {link.name}
                 </a>
               ))}
+              <ThemeToggle />
               <a href="tel:+917207926206" aria-label="Call to get your AI video ad">
                 <Button variant="hero" size="sm">
                   <Phone className="w-4 h-4" aria-hidden="true" />
@@ -70,12 +72,15 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                     {link.name}
                   </a>
                 ))}
-                <a href="tel:+917207926206" aria-label="Call us">
-                  <Button variant="hero" className="w-full">
-                    <Phone className="w-4 h-4" aria-hidden="true" />
-                    Call: +91 7207926206
-                  </Button>
-                </a>
+                <div className="flex items-center justify-between gap-4">
+                  <ThemeToggle />
+                  <a href="tel:+917207926206" aria-label="Call us" className="flex-1">
+                    <Button variant="hero" className="w-full">
+                      <Phone className="w-4 h-4" aria-hidden="true" />
+                      Call: +91 7207926206
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           )}

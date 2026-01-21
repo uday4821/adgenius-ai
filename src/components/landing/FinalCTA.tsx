@@ -71,7 +71,7 @@ const FinalCTA = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           <p className="text-muted-foreground">
-            📞 WhatsApp / Call: <strong className="text-foreground">+91 7207926206</strong> • No payment forms. No commitments. Just start a conversation.
+            📞 Call: <strong className="text-foreground">+91 7207926206</strong> • 📧 <strong className="text-foreground">contact@edgeaihub.in</strong> • No commitments. Just start a conversation.
           </p>
         </div>
       </div>

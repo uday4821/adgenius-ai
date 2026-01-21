@@ -85,7 +85,7 @@ const WhatYouGet = () => {
                 </a>
               </div>
               <p className="text-sm text-muted-foreground mt-4">
-                📞 WhatsApp / Call: +91 7207926206 • Chat with us first
+                📞 Call: +91 7207926206 • 📧 contact@edgeaihub.in
               </p>
             </div>
           </div>

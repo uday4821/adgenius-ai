@@ -30,7 +30,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div>
             <h2 className="font-display text-2xl font-bold text-gradient mb-4">edgeaihub</h2>
             <p className="text-muted-foreground text-sm mb-4">
-              Premium AI Video Ads at ₹199 + Hollywood-quality AI Short Films for global brands.
+              Premium AI Video Ads + Hollywood-quality AI Short Films for global brands.
             </p>
             <div className="flex items-center gap-3" role="list" aria-label="Social media links">
               <a 
@@ -104,7 +104,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <span className="text-sm">+91 7207926206</span>
               </a>
               <p className="flex items-center gap-2 text-xs text-muted-foreground/70 ml-6">
-                (WhatsApp / Call)
+                (Mon-Sat, 9am-8pm IST)
               </p>
               <a 
                 href={emailLink}

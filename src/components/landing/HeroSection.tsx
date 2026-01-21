@@ -88,7 +88,7 @@ const HeroSection = () => {
 
           {/* Contact Info */}
           <p className="text-muted-foreground mb-12 animate-slide-up-delay-4">
-            📞 WhatsApp / Call: <strong className="text-foreground">+91 7207926206</strong> • 📧 Email: <strong className="text-foreground">contact@edgeaihub.in</strong>
+            📞 Call: <strong className="text-foreground">+91 7207926206</strong> • 📧 Email: <strong className="text-foreground">contact@edgeaihub.in</strong>
           </p>
 
           {/* Stats */}

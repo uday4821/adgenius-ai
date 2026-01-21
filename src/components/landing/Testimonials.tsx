@@ -128,7 +128,7 @@ const Testimonials = () => {
             Call: +91 7207926206
           </a>
           <p className="text-sm text-muted-foreground mt-4">
-            📞 WhatsApp / Call: +91 7207926206
+            📧 Email: contact@edgeaihub.in
           </p>
         </div>
       </div>

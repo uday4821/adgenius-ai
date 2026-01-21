@@ -1,4 +1,4 @@
-import { Play, MessageCircle } from "lucide-react";
+import { Play, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
 
@@ -60,7 +60,7 @@ const SampleVideos = () => {
     }
   };
 
-  const whatsappLink = "https://wa.me/918919400755?text=Hi%20EdgeAIHub!%20I%20saw%20the%20sample%20videos%20and%20want%20an%20ad%20like%20that!";
+  const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20Inquiry";
 
   return (
     <section id="samples" className="py-20 md:py-32 relative" aria-labelledby="samples-heading">
@@ -132,12 +132,20 @@ const SampleVideos = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Want an ad like this for your business?
           </p>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp about sample videos">
-            <Button variant="hero" size="xl">
-              <MessageCircle className="w-5 h-5" aria-hidden="true" />
-              Chat with Us on WhatsApp
-            </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="tel:+917207926206" aria-label="Call us for AI video ads">
+              <Button variant="hero" size="xl">
+                <Phone className="w-5 h-5" aria-hidden="true" />
+                Call: +91 7207926206
+              </Button>
+            </a>
+            <a href={emailLink} aria-label="Email us for AI video ads">
+              <Button variant="glass" size="xl">
+                <Mail className="w-5 h-5" aria-hidden="true" />
+                Email Us
+              </Button>
+            </a>
+          </div>
         </footer>
       </div>
     </section>

@@ -230,7 +230,7 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
               Call: +91 7207926206
             </a>
             <p className="text-sm text-muted-foreground mt-4">
-              📞 WhatsApp / Call: +91 7207926206 • 📧 contact@edgeaihub.in
+              📞 Call: +91 7207926206 • 📧 contact@edgeaihub.in
             </p>
           </div>
         </section>

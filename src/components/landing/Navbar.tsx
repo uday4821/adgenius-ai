@@ -2,16 +2,19 @@ import { useState, forwardRef, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import LanguageSelector from "@/components/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = forwardRef<HTMLElement>((_, ref) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navLinks = [
-    { name: "Why Us", href: "#why-us" },
-    { name: "Samples", href: "#samples" },
-    { name: "AI Short Films", href: "#ai-short-films" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Blog", href: "/blog" },
+    { name: t("nav.whyUs"), href: "#why-us" },
+    { name: t("nav.samples"), href: "#samples" },
+    { name: t("nav.aiShortFilms"), href: "#ai-short-films" },
+    { name: t("nav.howItWorks"), href: "#how-it-works" },
+    { name: t("nav.blog"), href: "/blog" },
   ];
 
   return (
@@ -25,7 +28,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8" role="menubar">
+            <div className="hidden md:flex items-center gap-6" role="menubar">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -36,6 +39,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                   {link.name}
                 </a>
               ))}
+              <LanguageSelector />
               <ThemeToggle />
               <a href="tel:+917207926206" aria-label="Call to get your AI video ad">
                 <Button variant="hero" size="sm">
@@ -46,15 +50,18 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-foreground"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-            >
-              {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <LanguageSelector variant="compact" />
+              <button
+                className="p-2 text-foreground"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+              >
+                {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Nav */}
@@ -77,7 +84,7 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
                   <a href="tel:+917207926206" aria-label="Call us" className="flex-1">
                     <Button variant="hero" className="w-full">
                       <Phone className="w-4 h-4" aria-hidden="true" />
-                      Call: +91 7207926206
+                      {t("common.call")}: +91 7207926206
                     </Button>
                   </a>
                 </div>

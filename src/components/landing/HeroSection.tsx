@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Sparkles, Zap, Globe, Clock } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
   const emailLink = "mailto:contact@edgeaihub.in?subject=AI%20Video%20Ad%20Inquiry";
+  const { t } = useLanguage();
 
   return (
     <section 
@@ -37,37 +39,37 @@ const HeroSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-3 mb-8 animate-slide-up" role="list" aria-label="Key features">
             <span className="glass px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2" role="listitem">
               <Sparkles className="w-4 h-4 text-primary" aria-hidden="true" />
-              AI-Powered
+              {t("hero.badge.aiPowered")}
             </span>
             <span className="glass px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2" role="listitem">
               <Zap className="w-4 h-4 text-secondary" aria-hidden="true" />
-              Conversion-Focused
+              {t("hero.badge.conversionFocused")}
             </span>
             <span className="glass px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2" role="listitem">
               <Globe className="w-4 h-4 text-primary" aria-hidden="true" />
-              Global Quality
+              {t("hero.badge.globalQuality")}
             </span>
             <span className="glass px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2" role="listitem">
               <Clock className="w-4 h-4 text-secondary" aria-hidden="true" />
-              Fast Delivery
+              {t("hero.badge.fastDelivery")}
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 id="hero-heading" className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up-delay-1">
-            Premium AI Video Ads
+            {t("hero.title1")}
             <br />
-            <span className="text-gradient">For Your Business</span>
+            <span className="text-gradient">{t("hero.title2")}</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4 animate-slide-up-delay-2">
-            Stop wasting lakhs on agencies. Get <strong className="text-foreground">studio-quality 30-second video ads</strong> powered by cutting-edge AI — faster, smarter, and at a fraction of the cost.
+            {t("hero.subtitle")}
           </p>
 
           {/* Value Proposition */}
           <p className="text-lg text-primary font-medium mb-10 animate-slide-up-delay-3">
-            Trusted by 10,000+ businesses across India & worldwide
+            {t("hero.trust")}
           </p>
 
           {/* CTA Buttons */}
@@ -75,29 +77,29 @@ const HeroSection = () => {
             <a href={emailLink} aria-label="Send email inquiry for AI video ads">
               <Button variant="hero" size="xl" className="w-full sm:w-auto">
                 <Mail className="w-5 h-5" aria-hidden="true" />
-                Contact via Email
+                {t("hero.emailBtn")}
               </Button>
             </a>
             <a href="tel:+917207926206" aria-label="Call us for AI video ads">
               <Button variant="glass" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5" aria-hidden="true" />
-                Call: +91 7207926206
+                {t("hero.callBtn")}: +91 7207926206
               </Button>
             </a>
           </div>
 
           {/* Contact Info */}
           <p className="text-muted-foreground mb-12 animate-slide-up-delay-4">
-            📞 Call: <strong className="text-foreground">+91 7207926206</strong> • 📧 Email: <strong className="text-foreground">contact@edgeaihub.in</strong>
+            📞 {t("common.call")}: <strong className="text-foreground">+91 7207926206</strong> • 📧 {t("common.email")}: <strong className="text-foreground">contact@edgeaihub.in</strong>
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto" role="list" aria-label="Business statistics">
             {[
-              { value: "10,000+", label: "Ads Created" },
-              { value: "24hrs", label: "Fast Delivery" },
-              { value: "50+", label: "Countries Served" },
-              { value: "100%", label: "Satisfaction" },
+              { value: "10,000+", label: t("hero.stats.adsCreated") },
+              { value: "24hrs", label: t("hero.stats.fastDelivery") },
+              { value: "50+", label: t("hero.stats.countries") },
+              { value: "100%", label: t("hero.stats.satisfaction") },
             ].map((stat, index) => (
               <div key={index} className="glass-strong p-4 rounded-2xl text-center" role="listitem">
                 <div className="text-2xl md:text-3xl font-display font-bold text-gradient">{stat.value}</div>

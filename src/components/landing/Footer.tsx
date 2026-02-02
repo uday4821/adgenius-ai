@@ -1,25 +1,27 @@
 import { forwardRef, memo } from "react";
 import { Phone, Mail, Globe, Instagram, Facebook, Film, Sparkles } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const emailLink = "mailto:contact@edgeaihub.in";
   const instagramLink = "https://www.instagram.com/edge_aihub?igsh=MW4zZzBtZWFpbnI0MQ==";
   const facebookLink = "https://www.facebook.com/edgeaihub/";
+  const { t } = useLanguage();
 
   const services = [
-    { name: "AI Video Ads", href: "#samples" },
-    { name: "AI Short Films", href: "#ai-short-films" },
-    { name: "Brand Videos", href: "#samples" },
-    { name: "Product Ads", href: "#samples" },
+    { name: t("footer.services.videoAds"), href: "#samples" },
+    { name: t("footer.services.shortFilms"), href: "#ai-short-films" },
+    { name: t("footer.services.brandVideos"), href: "#samples" },
+    { name: t("footer.services.productAds"), href: "#samples" },
   ];
 
   const industries = [
-    "Fashion & Jewelry",
-    "E-commerce",
-    "Real Estate",
-    "Education",
-    "Restaurants",
-    "Healthcare",
+    t("footer.industries.fashion"),
+    t("footer.industries.ecommerce"),
+    t("footer.industries.realestate"),
+    t("footer.industries.education"),
+    t("footer.industries.restaurants"),
+    t("footer.industries.healthcare"),
   ];
 
   return (
@@ -30,7 +32,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div>
             <h2 className="font-display text-2xl font-bold text-gradient mb-4">edgeaihub</h2>
             <p className="text-muted-foreground text-sm mb-4">
-              Premium AI Video Ads + Hollywood-quality AI Short Films for global brands.
+              {t("footer.description")}
             </p>
             <div className="flex items-center gap-3" role="list" aria-label="Social media links">
               <a 
@@ -60,7 +62,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <nav aria-label="Services navigation">
             <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
               <Film className="w-4 h-4 text-primary" aria-hidden="true" />
-              Our Services
+              {t("footer.ourServices")}
             </h3>
             <ul className="space-y-2" role="list">
               {services.map((service, index) => (
@@ -80,7 +82,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div>
             <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-secondary" aria-hidden="true" />
-              Industries We Serve
+              {t("footer.industriesWeServe")}
             </h3>
             <ul className="space-y-2" role="list" aria-label="Industries served">
               {industries.map((industry, index) => (
@@ -93,7 +95,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Contact */}
           <address className="not-italic">
-            <h3 className="font-semibold text-foreground mb-4">Get in Touch</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t("footer.getInTouch")}</h3>
             <div className="space-y-3">
               <a 
                 href="tel:+917207926206"
@@ -104,7 +106,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <span className="text-sm">+91 7207926206</span>
               </a>
               <p className="flex items-center gap-2 text-xs text-muted-foreground/70 ml-6">
-                (Mon-Sat, 9am-8pm IST)
+                ({t("footer.businessHours")})
               </p>
               <a 
                 href={emailLink}
@@ -128,7 +130,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               {/* Office Address */}
               <div className="pt-3 mt-3 border-t border-border/30">
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">📍 Office:</strong><br />
+                  <strong className="text-foreground">📍 {t("footer.office")}:</strong><br />
                   2nd Floor, SK Complex,<br />
                   Attibele-Anekal Road,<br />
                   Attibele, Bangalore - 562107
@@ -141,20 +143,20 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         {/* Keywords Bar for SEO */}
         <div className="mb-8 p-4 rounded-xl glass" aria-label="Related services and locations">
           <p className="text-xs text-muted-foreground text-center">
-            <strong className="text-foreground">AI Video Ads</strong> • <strong className="text-foreground">AI Short Films</strong> • Fashion Ads • Jewelry Advertising • E-commerce Videos • Real Estate Ads • Product Videos • Brand Films • YouTube Ads • Instagram Reels • Facebook Ads • Viral Video Marketing • Global Advertising • India • USA • UK • UAE • Worldwide
+            <strong className="text-foreground">{t("footer.services.videoAds")}</strong> • <strong className="text-foreground">{t("footer.services.shortFilms")}</strong> • {t("footer.industries.fashion")} • {t("footer.industries.ecommerce")} • {t("footer.industries.realestate")} • YouTube Ads • Instagram Reels • Facebook Ads • {t("footer.globalService")}
           </p>
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} edgeaihub. All rights reserved.
+            © {new Date().getFullYear()} edgeaihub. {t("footer.rights")}
           </p>
           <p className="text-xs text-muted-foreground flex items-center gap-2" aria-label="Service highlights">
-            <span aria-hidden="true">⚡</span> <span className="text-primary">AI-Powered</span>
+            <span aria-hidden="true">⚡</span> <span className="text-primary">{t("footer.aiPowered")}</span>
             <span className="text-muted-foreground/50" aria-hidden="true">•</span>
-            <span aria-hidden="true">🎬</span> <span className="text-secondary">Cinema Quality</span>
+            <span aria-hidden="true">🎬</span> <span className="text-secondary">{t("footer.cinemaQuality")}</span>
             <span className="text-muted-foreground/50" aria-hidden="true">•</span>
-            <span aria-hidden="true">🌍</span> <span className="text-primary">Global Service</span>
+            <span aria-hidden="true">🌍</span> <span className="text-primary">{t("footer.globalService")}</span>
           </p>
         </div>
       </div>

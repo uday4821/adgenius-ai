@@ -1,45 +1,48 @@
 import { X, Check, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhyEdgeAIHub = () => {
+  const { t } = useLanguage();
+
   const comparisons = [
     {
       type: "bad",
-      title: "Traditional Agencies",
+      title: t("whyUs.agencies.title"),
       points: [
-        "₹50,000 - ₹5,00,000 per video",
-        "2-4 weeks delivery time",
-        "Endless revision cycles",
-        "Complex contracts & commitments",
+        t("whyUs.agencies.point1"),
+        t("whyUs.agencies.point2"),
+        t("whyUs.agencies.point3"),
+        t("whyUs.agencies.point4"),
       ],
     },
     {
       type: "bad",
-      title: "Freelancers",
+      title: t("whyUs.freelancers.title"),
       points: [
-        "Inconsistent quality",
-        "Unreliable timelines",
-        "Limited creative options",
-        "No scalability",
+        t("whyUs.freelancers.point1"),
+        t("whyUs.freelancers.point2"),
+        t("whyUs.freelancers.point3"),
+        t("whyUs.freelancers.point4"),
       ],
     },
     {
       type: "bad",
-      title: "Generic AI Tools",
+      title: t("whyUs.genericAI.title"),
       points: [
-        "Template-looking output",
-        "No ad optimization",
-        "Complex learning curve",
-        "Poor conversion rates",
+        t("whyUs.genericAI.point1"),
+        t("whyUs.genericAI.point2"),
+        t("whyUs.genericAI.point3"),
+        t("whyUs.genericAI.point4"),
       ],
     },
     {
       type: "good",
       title: "edgeaihub",
       points: [
-        "Affordable premium video ads",
-        "24-hour delivery guaranteed",
-        "Conversion-optimized templates",
-        "Scale unlimited ads instantly",
+        t("whyUs.edgeaihub.point1"),
+        t("whyUs.edgeaihub.point2"),
+        t("whyUs.edgeaihub.point3"),
+        t("whyUs.edgeaihub.point4"),
       ],
     },
   ];
@@ -50,13 +53,12 @@ const WhyEdgeAIHub = () => {
       
       <div className="container relative z-10">
         <header className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">The Smart Choice</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("whyUs.badge")}</span>
           <h2 id="why-us-heading" className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Why <span className="text-gradient">edgeaihub</span>?
+            {t("whyUs.title")} <span className="text-gradient">edgeaihub</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Agencies charge lakhs. Freelancers disappoint. Generic tools fail. 
-            We deliver premium quality at affordable prices.
+            {t("whyUs.subtitle")}
           </p>
         </header>
 

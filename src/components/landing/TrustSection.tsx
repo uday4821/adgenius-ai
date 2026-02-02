@@ -1,26 +1,29 @@
 import { Shield, CheckCircle, Lock, UserCheck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TrustSection = () => {
+  const { t } = useLanguage();
+
   const trustPoints = [
     {
       icon: Shield,
-      title: "Brand Safe",
-      description: "Every ad is reviewed to ensure it aligns with your brand values and platform guidelines.",
+      title: t("trust.brandSafe.title"),
+      description: t("trust.brandSafe.description"),
     },
     {
       icon: CheckCircle,
-      title: "Quality Checked",
-      description: "Multi-layer quality assurance before delivery. No glitches, no errors, no compromises.",
+      title: t("trust.qualityChecked.title"),
+      description: t("trust.qualityChecked.description"),
     },
     {
       icon: UserCheck,
-      title: "Human Verified",
-      description: "AI creates, humans verify. The perfect blend of efficiency and quality control.",
+      title: t("trust.humanVerified.title"),
+      description: t("trust.humanVerified.description"),
     },
     {
       icon: Lock,
-      title: "Secure Process",
-      description: "Your business details and brand assets are handled with complete confidentiality.",
+      title: t("trust.secureProcess.title"),
+      description: t("trust.secureProcess.description"),
     },
   ];
 
@@ -30,12 +33,12 @@ const TrustSection = () => {
       
       <div className="container relative z-10">
         <div className="text-center mb-16">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Your Trust Matters</span>
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">{t("trust.badge")}</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Quality & <span className="text-gradient-reverse">Reliability</span>
+            {t("trust.title")} <span className="text-gradient-reverse">{t("trust.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We take your brand seriously. Every ad goes through rigorous checks.
+            {t("trust.subtitle")}
           </p>
         </div>
 

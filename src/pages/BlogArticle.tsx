@@ -4,6 +4,7 @@ import { Link, useParams, Navigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft, Clock, User, Phone, Share2, Calendar, Tag } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Ultra-realistic professional images
 import modelProfessional from "@/assets/model-professional-realistic.jpg";
@@ -305,6 +306,7 @@ const blogPosts: BlogPost[] = [
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { pathname } = useLocation();
+  const { t } = useLanguage();
   const post = blogPosts.find(p => p.slug === slug);
   
   // Scroll to top when navigating between articles
@@ -317,6 +319,19 @@ const BlogArticle = () => {
   }
 
   const relatedPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 3);
+
+  // Helper function to translate categories
+  const translateCategory = (category: string) => {
+    const categoryMap: Record<string, string> = {
+      "AI Marketing": t("blog.category.aiMarketing"),
+      "Social Media": t("blog.category.socialMedia"),
+      "AI Films": t("blog.category.aiFilms"),
+      "Real Estate": t("blog.category.realEstate"),
+      "E-commerce": t("blog.category.ecommerce"),
+      "Luxury": t("blog.category.luxury"),
+    };
+    return categoryMap[category] || category;
+  };
 
   return (
     <>
@@ -364,11 +379,11 @@ const BlogArticle = () => {
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" />
-                Back to Blog
+                {t("blog.backToBlog")}
               </Link>
               
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
-                {post.category}
+                {translateCategory(post.category)}
               </span>
               
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
@@ -386,7 +401,7 @@ const BlogArticle = () => {
                 </span>
                 <span className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
-                  {post.readTime}
+                  {post.readTime.replace("min read", t("blog.minRead"))}
                 </span>
               </div>
             </div>
@@ -441,7 +456,7 @@ const BlogArticle = () => {
               {/* Share */}
               <div className="mt-12 pt-8 border-t border-border">
                 <div className="flex items-center gap-4">
-                  <span className="text-foreground font-semibold">Share this article:</span>
+                  <span className="text-foreground font-semibold">{t("blog.share")}:</span>
                   <button 
                     onClick={() => {
                       if (navigator.share) {
@@ -466,17 +481,17 @@ const BlogArticle = () => {
         <section className="py-16 bg-gradient-to-r from-primary/10 to-accent/10">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Ready to Create Your Own AI Video Ad?
+              {t("blog.ctaTitle")}
             </h2>
             <p className="text-muted-foreground mb-6">
-              Get a premium AI video ad with 24-hour delivery
+              {t("blog.ctaSubtitle")}
             </p>
             <a
               href="tel:+917207926206"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
-              Call: +91 7207926206
+              {t("common.call")}: +91 7207926206
             </a>
           </div>
         </section>
@@ -485,7 +500,7 @@ const BlogArticle = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
-              Related Articles
+              {t("blog.relatedArticles")}
             </h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {relatedPosts.map((relatedPost, index) => (
@@ -504,7 +519,7 @@ const BlogArticle = () => {
                   </div>
                   <div className="p-4">
                     <span className="inline-block px-2 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-2">
-                      {relatedPost.category}
+                      {translateCategory(relatedPost.category)}
                     </span>
                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                       {relatedPost.title}

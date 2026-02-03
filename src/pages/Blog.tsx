@@ -1,6 +1,6 @@
-import { forwardRef, memo } from "react";
+import { forwardRef, memo, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowRight, Clock, User, Phone } from "lucide-react";
@@ -71,6 +71,13 @@ const blogPosts = [
 ];
 
 const Blog = forwardRef<HTMLElement>((_, ref) => {
+  const { pathname } = useLocation();
+  
+  // Scroll to top when navigating to blog page
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
   return (
     <>
       <Helmet>

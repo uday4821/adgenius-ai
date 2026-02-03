@@ -10,10 +10,10 @@ const Navbar = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { name: t("nav.whyUs"), href: "#why-us" },
-    { name: t("nav.samples"), href: "#samples" },
-    { name: t("nav.aiShortFilms"), href: "#ai-short-films" },
-    { name: t("nav.howItWorks"), href: "#how-it-works" },
+    { name: t("nav.whyUs"), href: "/#why-us" },
+    { name: t("nav.samples"), href: "/#samples" },
+    { name: t("nav.aiShortFilms"), href: "/#ai-short-films" },
+    { name: t("nav.howItWorks"), href: "/#how-it-works" },
     { name: t("nav.blog"), href: "/blog" },
   ];
 

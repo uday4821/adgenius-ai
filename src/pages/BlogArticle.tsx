@@ -1,6 +1,6 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams, Navigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft, Clock, User, Phone, Share2, Calendar, Tag } from "lucide-react";
@@ -304,7 +304,13 @@ const blogPosts: BlogPost[] = [
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { pathname } = useLocation();
   const post = blogPosts.find(p => p.slug === slug);
+  
+  // Scroll to top when navigating between articles
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
   
   if (!post) {
     return <Navigate to="/blog" replace />;

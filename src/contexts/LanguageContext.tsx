@@ -39,7 +39,11 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
   currentLanguageInfo: LanguageInfo;
+  isRTL: boolean;
 }
+
+// RTL languages
+const rtlLanguages: Language[] = ["ar"];
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
@@ -70,15 +74,19 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return "en";
   });
 
+  const isRTL = rtlLanguages.includes(language);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem("edgeaihub-language", lang);
     document.documentElement.lang = lang;
+    document.documentElement.dir = rtlLanguages.includes(lang) ? "rtl" : "ltr";
   };
 
   useEffect(() => {
     document.documentElement.lang = language;
-  }, [language]);
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
+  }, [language, isRTL]);
 
   const currentLanguageInfo = languages.find(l => l.code === language) || languages[0];
 
@@ -88,7 +96,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, currentLanguageInfo }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, currentLanguageInfo, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -9,6 +9,7 @@ import {
   Sparkles,
   Film
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import modelLuxuryFashion from "@/assets/model-luxury-fashion.jpg";
 import modelSkincare from "@/assets/model-skincare-beauty.jpg";
 import modelDesigner from "@/assets/model-designer-fashion.jpg";
@@ -23,67 +24,68 @@ import modelTech from "@/assets/model-tech-realistic.jpg";
 import modelEntertainment from "@/assets/model-entertainment-realistic.jpg";
 
 const Industries = () => {
+  const { t } = useLanguage();
   const industries = [
     { 
       icon: ShoppingBag, 
-      name: "E-commerce & D2C", 
-      description: "Product launches, offers, brand videos",
+      name: t("industries.ecommerce"), 
+      description: t("industries.ecommerceDesc"),
       image: modelEcommerce,
       alt: "Professional E-commerce Model - AI Video Ads for Online Retail Brands India USA UK"
     },
     { 
       icon: Utensils, 
-      name: "Restaurants & Cafes", 
-      description: "Menu highlights, delivery promos",
+      name: t("industries.restaurants"), 
+      description: t("industries.restaurantsDesc"),
       image: modelRestaurant,
       alt: "Restaurant Chef Model - AI Video Ads for Food Industry Hospitality Marketing"
     },
     { 
       icon: GraduationCap, 
-      name: "Coaches & Educators", 
-      description: "Course promos, testimonials",
+      name: t("industries.coaches"), 
+      description: t("industries.coachesDesc"),
       image: modelEducator,
       alt: "Professional Educator Model - AI Video Ads for EdTech Online Courses Coaching"
     },
     { 
       icon: Home, 
-      name: "Real Estate", 
-      description: "Property showcases, virtual tours",
+      name: t("industries.realestate"), 
+      description: t("industries.realestateDesc"),
       image: modelRealestate,
       alt: "Real Estate Agent Model - AI Video Ads for Property Marketing Luxury Homes"
     },
     { 
       icon: Heart, 
-      name: "Healthcare & Wellness", 
-      description: "Clinic promos, service highlights",
+      name: t("industries.healthcare"), 
+      description: t("industries.healthcareDesc"),
       image: modelHealthcare,
       alt: "Healthcare Professional Model - AI Video Ads for Medical Clinics Wellness Centers"
     },
     { 
       icon: Briefcase, 
-      name: "Professional Services", 
-      description: "Law firms, consultants, agencies",
+      name: t("industries.professional"), 
+      description: t("industries.professionalDesc"),
       image: modelProfessional,
       alt: "Professional Lawyer Model - AI Video Ads for Law Firms Consulting Agencies"
     },
     { 
       icon: Car, 
-      name: "Automotive", 
-      description: "Dealerships, rentals, services",
+      name: t("industries.automotive"), 
+      description: t("industries.automotiveDesc"),
       image: modelAutomotive,
       alt: "Automotive Model - AI Video Ads for Car Dealerships Luxury Vehicles Marketing"
     },
     { 
       icon: Sparkles, 
-      name: "Startups & Tech", 
-      description: "App demos, SaaS explainers",
+      name: t("industries.startups"), 
+      description: t("industries.startupsDesc"),
       image: modelTech,
       alt: "Tech Professional Model - AI Video Ads for SaaS Startups App Marketing"
     },
     { 
       icon: Film, 
-      name: "Entertainment & Media", 
-      description: "Movie trailers, OTT promos, music videos",
+      name: t("industries.entertainment"), 
+      description: t("industries.entertainmentDesc"),
       image: modelEntertainment,
       alt: "Entertainment Celebrity Model - AI Video Ads for Movies OTT Platforms Media Industry"
     },
@@ -95,12 +97,12 @@ const Industries = () => {
       
       <div className="container relative z-10">
         <header className="text-center mb-16">
-          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Universal Solution</span>
+          <span className="text-secondary font-semibold text-sm uppercase tracking-wider">{t("industries.badge")}</span>
           <h2 id="industries-heading" className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Industries We <span className="text-gradient-reverse">Serve</span>
+            {t("industries.title")} <span className="text-gradient-reverse">{t("industries.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From local shops to global brands — our AI adapts to every industry.
+            {t("industries.subtitle")}
           </p>
         </header>
 
@@ -120,8 +122,8 @@ const Industries = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="font-display text-xl font-bold mb-1">Luxury & Jewelry</h3>
-              <p className="text-sm text-muted-foreground">Diamonds • Gold • Fashion Jewelry • Watches</p>
+              <h3 className="font-display text-xl font-bold mb-1">{t("industries.luxury")}</h3>
+              <p className="text-sm text-muted-foreground">{t("industries.luxuryDesc")}</p>
             </figcaption>
           </figure>
 
@@ -139,8 +141,8 @@ const Industries = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="font-display text-xl font-bold mb-1">Beauty & Skincare</h3>
-              <p className="text-sm text-muted-foreground">Cosmetics • Skincare • Wellness • Spa</p>
+              <h3 className="font-display text-xl font-bold mb-1">{t("industries.beauty")}</h3>
+              <p className="text-sm text-muted-foreground">{t("industries.beautyDesc")}</p>
             </figcaption>
           </figure>
 
@@ -158,8 +160,8 @@ const Industries = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="font-display text-xl font-bold mb-1">Designer Fashion</h3>
-              <p className="text-sm text-muted-foreground">Haute Couture • Bridal • Luxury Apparel</p>
+              <h3 className="font-display text-xl font-bold mb-1">{t("industries.designer")}</h3>
+              <p className="text-sm text-muted-foreground">{t("industries.designerDesc")}</p>
             </figcaption>
           </figure>
         </div>
@@ -201,7 +203,7 @@ const Industries = () => {
 
         <footer className="text-center mt-12">
           <p className="text-muted-foreground">
-            Don't see your industry? <span className="text-primary font-medium">We create ads for any business worldwide.</span>
+            {t("industries.footer")} <span className="text-primary font-medium">{t("industries.footerHighlight")}</span>
           </p>
         </footer>
       </div>

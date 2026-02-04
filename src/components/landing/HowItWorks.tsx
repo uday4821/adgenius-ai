@@ -1,26 +1,29 @@
 import { Mail, FileText, Video } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       number: "01",
       icon: Mail,
-      title: "Contact Us",
-      description: "Email us or call +91 7207926206. Tell us about your business and goals.",
+      title: t("howItWorks.step1.title"),
+      description: t("howItWorks.step1.description"),
       color: "primary",
     },
     {
       number: "02",
       icon: FileText,
-      title: "Share Details",
-      description: "Send your business info, logo, key message, and any preferences you have.",
+      title: t("howItWorks.step2.title"),
+      description: t("howItWorks.step2.description"),
       color: "secondary",
     },
     {
       number: "03",
       icon: Video,
-      title: "Receive Your Ad",
-      description: "Get your premium AI video ad within 24 hours. Ready to run on any platform.",
+      title: t("howItWorks.step3.title"),
+      description: t("howItWorks.step3.description"),
       color: "primary",
     },
   ];
@@ -31,12 +34,12 @@ const HowItWorks = () => {
       
       <div className="container relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Simple Process</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("howItWorks.badge")}</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            How It <span className="text-gradient">Works</span>
+            {t("howItWorks.title")} <span className="text-gradient">{t("howItWorks.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps. Zero complexity. Your ad delivered fast.
+            {t("howItWorks.subtitle")}
           </p>
         </div>
 

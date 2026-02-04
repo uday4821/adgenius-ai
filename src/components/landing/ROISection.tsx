@@ -1,29 +1,32 @@
 import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ROISection = () => {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       icon: Lightbulb,
-      title: "Smart Investment",
-      description: "Create premium video ads at minimal cost — test multiple creatives rapidly.",
+      title: t("roi.step1.title"),
+      description: t("roi.step1.description"),
       color: "primary",
     },
     {
       icon: Target,
-      title: "Better Creatives",
-      description: "AI-optimized visuals and hooks that grab attention in the first 3 seconds.",
+      title: t("roi.step2.title"),
+      description: t("roi.step2.description"),
       color: "secondary",
     },
     {
       icon: BarChart3,
-      title: "Higher CTR",
-      description: "Quality creatives = higher click-through rates on every ad platform.",
+      title: t("roi.step3.title"),
+      description: t("roi.step3.description"),
       color: "primary",
     },
     {
       icon: TrendingUp,
-      title: "Lower Ad Costs",
-      description: "Better performance = lower CPC = more conversions per rupee spent.",
+      title: t("roi.step4.title"),
+      description: t("roi.step4.description"),
       color: "secondary",
     },
   ];
@@ -34,13 +37,14 @@ const ROISection = () => {
       
       <div className="container relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">The Math Makes Sense</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("roi.badge")}</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Transform Your Investment Into <span className="text-gradient">Massive ROI</span>
+            {t("roi.title")} <span className="text-gradient">{t("roi.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Smart business owners understand: <strong className="text-foreground">better creatives = better performance = higher profits</strong>. 
-            Here's how edgeaihub multiplies your returns.
+            {t("roi.subtitle").split(t("roi.subtitleBold"))[0]}
+            <strong className="text-foreground">{t("roi.subtitleBold")}</strong>
+            {t("roi.subtitle").split(t("roi.subtitleBold"))[1]}
           </p>
         </div>
 
@@ -71,21 +75,24 @@ const ROISection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/30 text-center">
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Result: <span className="text-gradient">10x - 100x Return on Investment</span>
+              {t("roi.result.title")} <span className="text-gradient">{t("roi.result.highlight")}</span>
             </h3>
             <p className="text-muted-foreground mb-6">
-              Businesses using edgeaihub report <strong className="text-foreground">50-70% lower cost per acquisition</strong> and 
-              <strong className="text-foreground"> 3x higher engagement rates</strong> compared to traditional video production.
+              {t("roi.result.description").split(t("roi.result.lowerCost"))[0]}
+              <strong className="text-foreground">{t("roi.result.lowerCost")}</strong>
+              {t("roi.result.description").split(t("roi.result.lowerCost"))[1]?.split(t("roi.result.engagement"))[0]}
+              <strong className="text-foreground">{t("roi.result.engagement")}</strong>
+              {t("roi.result.description").split(t("roi.result.engagement"))[1]}
             </p>
             <div className="flex flex-wrap justify-center gap-8">
               <div>
-                <div className="text-3xl font-display font-bold text-primary">Affordable</div>
-                <div className="text-sm text-muted-foreground">Your Investment</div>
+                <div className="text-3xl font-display font-bold text-primary">{t("roi.investment")}</div>
+                <div className="text-sm text-muted-foreground">{t("roi.investmentLabel")}</div>
               </div>
               <div className="text-2xl font-bold text-muted-foreground">=</div>
               <div>
-                <div className="text-3xl font-display font-bold text-secondary">10x-100x</div>
-                <div className="text-sm text-muted-foreground">Potential Returns</div>
+                <div className="text-3xl font-display font-bold text-secondary">{t("roi.returns")}</div>
+                <div className="text-sm text-muted-foreground">{t("roi.returnsLabel")}</div>
               </div>
             </div>
           </div>

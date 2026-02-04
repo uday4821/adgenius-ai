@@ -1,45 +1,47 @@
 import { Play, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SampleVideos = () => {
+  const { t } = useLanguage();
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const samples = [
     {
-      title: "Jewellery & Fashion That Sells 10x Faster",
-      category: "E-commerce & D2C Ads",
+      title: t("samples.ecommerce"),
+      category: t("samples.ecommerceCategory"),
       gradient: "from-orange-500/20 to-red-500/20",
       video: "/videos/ecommerce.mp4",
     },
     {
-      title: "Hot Coffee That Sells Itself",
-      category: "Café & Restaurant Ads",
+      title: t("samples.restaurant"),
+      category: t("samples.restaurantCategory"),
       gradient: "from-green-500/20 to-emerald-500/20",
       video: "/videos/restaurant.mp4",
     },
     {
-      title: "Coaching Ads That Fill Every Seat",
-      category: "Education & EdTech",
+      title: t("samples.education"),
+      category: t("samples.educationCategory"),
       gradient: "from-blue-500/20 to-cyan-500/20",
       video: "/videos/education.mp4",
     },
     {
-      title: "Real Estate Showcase",
-      category: "Property",
+      title: t("samples.realestate"),
+      category: t("samples.realestateCategory"),
       gradient: "from-purple-500/20 to-pink-500/20",
       video: "/videos/realestate.mp4",
     },
     {
-      title: "Runway-Ready Ads That Convert",
-      category: "Fashion & D2C Brands",
+      title: t("samples.fashion"),
+      category: t("samples.fashionCategory"),
       gradient: "from-pink-500/20 to-rose-500/20",
       video: "/videos/fashion.mp4",
     },
     {
-      title: "Tech Startup Demo",
-      category: "SaaS / App",
+      title: t("samples.tech"),
+      category: t("samples.techCategory"),
       gradient: "from-cyan-500/20 to-blue-500/20",
       video: "/videos/cgiads.mp4",
     },
@@ -68,12 +70,12 @@ const SampleVideos = () => {
       
       <div className="container relative z-10">
         <header className="text-center mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Real Examples</span>
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">{t("samples.badge")}</span>
           <h2 id="samples-heading" className="font-display text-3xl md:text-5xl font-bold mt-4 mb-6">
-            See Real <span className="text-gradient">AI Ads We Create</span>
+            {t("samples.title")} <span className="text-gradient">{t("samples.titleHighlight")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            These are actual sample videos. This is the <strong className="text-foreground">exact quality</strong> you will receive.
+            {t("samples.subtitle")}
           </p>
         </header>
 
@@ -130,19 +132,19 @@ const SampleVideos = () => {
 
         <footer className="text-center">
           <p className="text-lg text-muted-foreground mb-6">
-            Want an ad like this for your business?
+            {t("samples.cta")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="tel:+917207926206" aria-label="Call us for AI video ads">
               <Button variant="hero" size="xl">
                 <Phone className="w-5 h-5" aria-hidden="true" />
-                Call: +91 7207926206
+                {t("common.call")}: +91 7207926206
               </Button>
             </a>
             <a href={emailLink} aria-label="Email us for AI video ads">
               <Button variant="glass" size="xl">
                 <Mail className="w-5 h-5" aria-hidden="true" />
-                Email Us
+                {t("common.email")}
               </Button>
             </a>
           </div>

@@ -1,5 +1,13 @@
 import { memo } from "react";
 import { Star, Quote, Phone } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+import testimonialPriya from "@/assets/testimonial-priya.jpg";
+import testimonialRajesh from "@/assets/testimonial-rajesh.jpg";
+import testimonialSarah from "@/assets/testimonial-sarah.jpg";
+import testimonialAhmed from "@/assets/testimonial-ahmed.jpg";
+import testimonialMeena from "@/assets/testimonial-meena.jpg";
+import testimonialDavid from "@/assets/testimonial-david.jpg";
 
 const testimonials = [
   {
@@ -8,7 +16,8 @@ const testimonials = [
     location: "Mumbai, India",
     rating: 5,
     text: "Got 10x more engagement on my Instagram ads! The AI video was so professional that my customers thought I hired a big agency. Absolutely worth it!",
-    result: "10x Engagement"
+    result: "10x Engagement",
+    image: testimonialPriya
   },
   {
     name: "Rajesh Kumar",
@@ -16,7 +25,8 @@ const testimonials = [
     location: "Bangalore, India",
     rating: 5,
     text: "Sold 3 properties in first week after running the AI video ad. The quality is unbelievable for this price. My competition is clueless!",
-    result: "3 Sales in 1 Week"
+    result: "3 Sales in 1 Week",
+    image: testimonialRajesh
   },
   {
     name: "Sarah Johnson",
@@ -24,7 +34,8 @@ const testimonials = [
     location: "New York, USA",
     rating: 5,
     text: "I was skeptical at first but the results speak for themselves. 40% increase in conversions and the ad was delivered in just 18 hours!",
-    result: "40% More Conversions"
+    result: "40% More Conversions",
+    image: testimonialSarah
   },
   {
     name: "Ahmed Al-Rashid",
@@ -32,7 +43,8 @@ const testimonials = [
     location: "Dubai, UAE",
     rating: 5,
     text: "We opened 2 new locations and edgeaihub created stunning video ads for each. The ROI was incredible - 5x return on ad spend!",
-    result: "5x ROAS"
+    result: "5x ROAS",
+    image: testimonialAhmed
   },
   {
     name: "Meena Patel",
@@ -40,7 +52,8 @@ const testimonials = [
     location: "Surat, India",
     rating: 5,
     text: "My luxury jewelry brand needed premium content. edgeaihub delivered Hollywood-quality videos at a fraction of what agencies charge. Orders doubled!",
-    result: "2x Orders"
+    result: "2x Orders",
+    image: testimonialMeena
   },
   {
     name: "David Chen",
@@ -48,7 +61,8 @@ const testimonials = [
     location: "Singapore",
     rating: 5,
     text: "Fast, professional, and incredibly affordable. The AI short film they created for our product launch went viral on LinkedIn. 50K+ views!",
-    result: "50K+ Views"
+    result: "50K+ Views",
+    image: testimonialDavid
   }
 ];
 
@@ -104,9 +118,12 @@ const Testimonials = () => {
               
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-border/30">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg">
-                  {testimonial.name.charAt(0)}
-                </div>
+                <Avatar className="w-12 h-12">
+                  <AvatarImage src={testimonial.image} alt={testimonial.name} className="object-cover" />
+                  <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground font-bold">
+                    {testimonial.name.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
                 <div>
                   <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>

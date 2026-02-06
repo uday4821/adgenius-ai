@@ -73,7 +73,7 @@ const blogPosts = [
 
 const Blog = forwardRef<HTMLElement>((_, ref) => {
   const { pathname } = useLocation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   // Scroll to top when navigating to blog page
   useEffect(() => {
@@ -199,11 +199,11 @@ const Blog = forwardRef<HTMLElement>((_, ref) => {
                     </span>
                     
                     <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                      {post.title}
+                      {getBlogPostTranslation(post.slug, language)?.title || post.title}
                     </h2>
                     
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
+                      {getBlogPostTranslation(post.slug, language)?.excerpt || post.excerpt}
                     </p>
                     
                     <div className="flex items-center justify-between text-xs text-muted-foreground">

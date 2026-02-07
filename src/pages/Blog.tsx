@@ -5,7 +5,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowRight, Clock, User, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import { getBlogPostTranslation } from "@/translations/blogTranslations";
 // Ultra-realistic professional images
 import modelProfessional from "@/assets/model-professional-realistic.jpg";
 import modelFashion from "@/assets/model-luxury-fashion.jpg";

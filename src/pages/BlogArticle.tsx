@@ -1,10 +1,11 @@
-import { memo, useEffect } from "react";
+import { memo, useEffect, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams, Navigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { ArrowLeft, Clock, User, Phone, Share2, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Clock, User, Phone, Share2, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getBlogPostTranslation } from "@/translations/blogTranslations";
 
 // Ultra-realistic professional images
 import modelProfessional from "@/assets/model-professional-realistic.jpg";
@@ -306,8 +307,14 @@ const blogPosts: BlogPost[] = [
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { pathname } = useLocation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const post = blogPosts.find(p => p.slug === slug);
+  
+  // Get translated content
+  const translatedPost = useMemo(() => {
+    if (!slug) return null;
+    return getBlogPostTranslation(slug, language);
+  }, [slug, language]);
   
   // Scroll to top when navigating between articles
   useEffect(() => {
@@ -319,6 +326,11 @@ const BlogArticle = () => {
   }
 
   const relatedPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 3);
+  
+  // Use translated content or fallback to English
+  const displayTitle = translatedPost?.title || post.title;
+  const displayExcerpt = translatedPost?.excerpt || post.excerpt;
+  const displayContent = translatedPost?.content || post.content;
 
   // Helper function to translate categories
   const translateCategory = (category: string) => {
@@ -336,13 +348,13 @@ const BlogArticle = () => {
   return (
     <>
       <Helmet>
-        <title>{post.title} | edgeaihub Blog</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{displayTitle} | edgeaihub Blog</title>
+        <meta name="description" content={displayExcerpt} />
         <meta name="keywords" content={`${post.category}, AI video ads, video marketing, ${post.title.toLowerCase()}`} />
         <link rel="canonical" href={`https://ai.edgeaihub.in/blog/${post.slug}`} />
         
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:title" content={displayTitle} />
+        <meta property="og:description" content={displayExcerpt} />
         <meta property="og:url" content={`https://ai.edgeaihub.in/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={post.image} />
@@ -351,8 +363,8 @@ const BlogArticle = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            "headline": post.title,
-            "description": post.excerpt,
+            "headline": displayTitle,
+            "description": displayExcerpt,
             "image": post.image,
             "datePublished": post.date,
             "author": {
@@ -387,7 +399,7 @@ const BlogArticle = () => {
               </span>
               
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                {post.title}
+                {displayTitle}
               </h1>
               
               <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm mb-8">
@@ -428,7 +440,7 @@ const BlogArticle = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <article className="prose prose-lg max-w-none">
-                {post.content.map((paragraph, index) => {
+                {displayContent.map((paragraph, index) => {
                   if (paragraph.startsWith('## ')) {
                     return (
                       <h2 key={index} className="text-2xl font-bold text-foreground mt-8 mb-4">
@@ -522,7 +534,7 @@ const BlogArticle = () => {
                       {translateCategory(relatedPost.category)}
                     </span>
                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                      {relatedPost.title}
+                      {getBlogPostTranslation(relatedPost.slug, language)?.title || relatedPost.title}
                     </h3>
                   </div>
                 </Link>

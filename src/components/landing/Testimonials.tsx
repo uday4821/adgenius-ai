@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { forwardRef, memo } from "react";
 import { Star, Quote, Phone } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -66,9 +66,9 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+const Testimonials = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden" id="testimonials">
+    <section ref={ref} className="py-20 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden" id="testimonials">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
@@ -151,6 +151,8 @@ const Testimonials = () => {
       </div>
     </section>
   );
-};
+});
+
+Testimonials.displayName = "Testimonials";
 
 export default memo(Testimonials);

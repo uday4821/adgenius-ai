@@ -1,7 +1,8 @@
+import { forwardRef, memo } from "react";
 import { Shield, CheckCircle, Lock, UserCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const TrustSection = () => {
+const TrustSection = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
 
   const trustPoints = [
@@ -28,7 +29,7 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-card/30 relative">
+    <section ref={ref} className="py-20 md:py-32 bg-card/30 relative">
       <div className="absolute inset-0 neural-bg opacity-20" />
       
       <div className="container relative z-10">
@@ -59,6 +60,8 @@ const TrustSection = () => {
       </div>
     </section>
   );
-};
+});
 
-export default TrustSection;
+TrustSection.displayName = "TrustSection";
+
+export default memo(TrustSection);

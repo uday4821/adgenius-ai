@@ -1,4 +1,5 @@
 import { forwardRef, memo } from "react";
+import { Link } from "react-router-dom";
 import { Phone, Mail, Globe, Instagram, Facebook, Film, Sparkles } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -148,9 +149,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} edgeaihub. {t("footer.rights")}
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} edgeaihub. {t("footer.rights")}
+            </p>
+            <nav className="flex items-center gap-4 text-xs text-muted-foreground" aria-label="Legal links">
+              <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <span aria-hidden="true">•</span>
+              <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+            </nav>
+          </div>
           <p className="text-xs text-muted-foreground flex items-center gap-2" aria-label="Service highlights">
             <span aria-hidden="true">⚡</span> <span className="text-primary">{t("footer.aiPowered")}</span>
             <span className="text-muted-foreground/50" aria-hidden="true">•</span>
